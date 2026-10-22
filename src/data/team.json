@@ -5,7 +5,7 @@
     "class": "Dosen",
     "seat": "1A",
     "role": "Dosen Pembimbing",
-    "photo": "/img/tim/mega-novita.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Gizza",
@@ -13,7 +13,7 @@
     "class": "5A",
     "seat": "2A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/gizza.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Ivan",
@@ -21,7 +21,7 @@
     "class": "5A",
     "seat": "2B",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/ivan.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Zawa",
@@ -29,7 +29,7 @@
     "class": "5D",
     "seat": "3A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/zawa.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Khaizun",
@@ -37,7 +37,7 @@
     "class": "5A",
     "seat": "3B",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/khaizun.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Ditsa",
@@ -45,7 +45,7 @@
     "class": "5B",
     "seat": "4A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/ditsa.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Dipo",
@@ -53,7 +53,7 @@
     "class": "5B",
     "seat": "4B",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/dipo.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Rendi",
@@ -61,7 +61,7 @@
     "class": "5D",
     "seat": "5A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/rendi.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Carendra",
@@ -69,7 +69,7 @@
     "class": "5D",
     "seat": "5B",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/carendra.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Aziz",
@@ -77,7 +77,7 @@
     "class": "5E",
     "seat": "6A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/aziz.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Heru",
@@ -85,7 +85,7 @@
     "class": "5E",
     "seat": "6B",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/heru.webp"
+    "photo": "/img/tim/person.webp"
   },
   {
     "nickname": "Ikhsan",
@@ -93,6 +93,6 @@
     "class": "5E",
     "seat": "7A",
     "role": "Mahasiswa Informatika",
-    "photo": "/img/tim/ikhsan.webp"
+    "photo": "/img/tim/person.webp"
   }
 ]
