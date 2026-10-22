@@ -1,0 +1,75 @@
+---
+import Rambu from "./Rambu.astro";
+import type { Day } from "../types";
+
+interface Props {
+  data: Day;
+}
+
+const { data } = Astro.props;
+
+const potong = [
+  { label: "SIANG", sub: "Balai Diklat Industri", h: "h-[46%]", bg: "bg-[var(--color-kertas)]" },
+  { label: "SORE", sub: "Pantai Kuta", h: "h-[68%]", bg: "bg-[#B9B3A8]" },
+  { label: "SENJA", sub: "Tari Kecak Pandawa", h: "h-[92%]", bg: "bg-[var(--color-aspal)]" },
+];
+---
+
+<section
+  id={data.id}
+  class="relative py-24 sm:py-28 scroll-mt-4"
+  style="background: linear-gradient(180deg, var(--color-kertas) 0%, #C9C3B8 45%, var(--color-aspal) 100%);"
+>
+  <div class="mx-auto max-w-[1400px] px-5 lg:pl-[92px]">
+    <div class="grid lg:grid-cols-[160px_1fr] gap-8">
+      <div class="lg:sticky lg:top-8 lg:self-start">
+        <Rambu dayNumber={data.day} date={data.date} />
+        <p class="mt-4 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.location}
+        </p>
+      </div>
+
+      <div class="min-w-0">
+        <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.category}
+        </p>
+        <h3 class="mt-2 font-['Archivo'] font-black uppercase tracking-tight leading-[0.95] text-3xl sm:text-5xl max-w-3xl">
+          {data.title}
+        </h3>
+        <p class="mt-6 max-w-2xl text-[1.05rem] leading-[1.65]">{data.description}</p>
+
+        <!-- Tiga potongan tinggi tak sama: SIANG → SORE → SENJA -->
+        <div class="mt-12 grid sm:grid-cols-3 gap-4 items-end">
+          {potong.map((p, i) => {
+            const photo = data.photos[i];
+            const isDark = i === 2;
+            return (
+              <article class={`${p.h} ${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-end relative overflow-hidden`}>
+                <span class="font-['Archivo'] font-black text-2xl sm:text-3xl tracking-tighter leading-none">
+                  {p.label}
+                </span>
+                <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] ${isDark ? "text-[var(--color-kertas)]/60" : "text-[var(--color-tinta-soft)]"}`}>
+                  {p.sub}
+                </span>
+                {photo && (
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    class="reveal-tirai mt-4 w-full aspect-[4/3] object-cover border-2 border-current opacity-90"
+                  />
+                )}
+              </article>
+            );
+          })}
+        </div>
+
+        <blockquote class="mt-10 border-l-4 border-[var(--color-marka)] pl-5">
+          <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug -rotate-1">“{data.quote}”</p>
+        </blockquote>
+
+
+      </div>
+    </div>
+  </div>
+</section>

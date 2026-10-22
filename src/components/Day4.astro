@@ -1,0 +1,104 @@
+---
+import Rambu from "./Rambu.astro";
+import type { Day } from "../types";
+
+interface Props {
+  data: Day;
+}
+
+const { data } = Astro.props;
+---
+
+<section id={data.id} class="relative py-24 sm:py-28 bg-[var(--color-kertas-2)] scroll-mt-4 overflow-hidden">
+  <div class="mx-auto max-w-[1400px] px-5 lg:pl-[92px]">
+    <div class="grid lg:grid-cols-[160px_1fr] gap-8">
+      <div class="lg:sticky lg:top-8 lg:self-start">
+        <Rambu dayNumber={data.day} date={data.date} />
+        <p class="mt-4 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.location}
+        </p>
+      </div>
+
+      <div class="min-w-0">
+        <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.category}
+        </p>
+        <h3 class="mt-2 font-['Archivo'] font-black uppercase tracking-tight leading-[0.95] text-3xl sm:text-5xl max-w-2xl">
+          {data.title}
+        </h3>
+
+        <!-- Kolase longgar -->
+        <div class="relative mt-12">
+          <!-- Stiker pita marka -->
+          <span class="absolute -top-6 right-0 sm:right-10 z-20 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] bg-[var(--color-marka)] border-2 border-[var(--color-tinta)] px-3 py-1.5 -rotate-3 shadow-[3px_3px_0_var(--color-tinta)]">
+            hari paling santai
+          </span>
+
+          <div class="grid sm:grid-cols-12 gap-6 items-start">
+            <figure class="sm:col-span-7 sm:col-start-1 rotate-[-1.5deg]">
+              <img
+                src={data.photos[0].src}
+                alt={data.photos[0].alt}
+                loading="lazy"
+                class="reveal-tirai w-full aspect-[16/9] object-cover border-4 border-[var(--color-kertas)] shadow-[5px_5px_0_var(--color-tinta)]"
+              />
+            </figure>
+
+            <figure class="sm:col-span-4 sm:col-start-9 sm:mt-16 rotate-[2.5deg]">
+              <img
+                src={data.photos[1].src}
+                alt={data.photos[1].alt}
+                loading="lazy"
+                class="reveal-tirai w-full aspect-square object-cover border-4 border-[var(--color-kertas)] shadow-[5px_5px_0_var(--color-tinta)]"
+              />
+            </figure>
+
+            <figure class="sm:col-span-5 sm:col-start-3 -rotate-[2deg] sm:-mt-4">
+              <img
+                src={data.photos[2].src}
+                alt={data.photos[2].alt}
+                loading="lazy"
+                class="reveal-tirai w-full aspect-[3/4] object-cover border-4 border-[var(--color-kertas)] shadow-[5px_5px_0_var(--color-tinta)]"
+              />
+            </figure>
+
+            <!-- Coretan tangan -->
+            <p class="sm:col-span-4 sm:col-start-8 sm:mt-24 font-['Caveat'] text-3xl leading-tight rotate-[-2deg] text-[var(--color-tinta)]">
+              “tiga jam di pasar,<br />dua setengah jam di warung”
+            </p>
+
+            <!-- Ephemera: tiket & struk -->
+            <figure class="sm:col-span-4 sm:col-start-1 sm:mt-10 rotate-[1.5deg]">
+              <img
+                src="/img/ephemera/tiket-bus.webp"
+                alt="Tiket bus perjalanan Tim 9"
+                loading="lazy"
+                class="reveal-tirai w-full aspect-[3/2] object-cover border-4 border-[var(--color-kertas)] shadow-[5px_5px_0_var(--color-tinta)]"
+              />
+              <figcaption class="mt-2 font-['DM_Mono'] text-[0.6rem] uppercase tracking-[0.15em] text-[var(--color-tinta-soft)]">
+                tiket bus — bukti sah kita jalan
+              </figcaption>
+            </figure>
+
+            <figure class="sm:col-span-3 sm:col-start-6 sm:mt-2 rotate-[-3deg]">
+              <img
+                src="/img/ephemera/struk-oleh-oleh.webp"
+                alt="Struk pembelian oleh-oleh"
+                loading="lazy"
+                class="reveal-tirai w-full aspect-[3/2] object-cover border-4 border-[var(--color-kertas)] shadow-[5px_5px_0_var(--color-tinta)]"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <p class="mt-12 max-w-2xl text-[1.05rem] leading-[1.65]">{data.description}</p>
+
+        <blockquote class="mt-8 max-w-2xl border-l-4 border-[var(--color-marka)] pl-5">
+          <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug -rotate-1">“{data.quote}”</p>
+        </blockquote>
+
+
+      </div>
+    </div>
+  </div>
+</section>

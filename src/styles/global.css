@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "@fontsource-variable/archivo/wght.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
+@import "@fontsource/doto/latin-400.css";
+@import "@fontsource/dm-mono/latin-400.css";
+@import "@fontsource/caveat/latin-400.css";
+
+@theme {
+  --color-kertas: #F2EFE9;
+  --color-kertas-2: #E6E2DA;
+  --color-garis: #CFCAC0;
+  --color-tinta: #1A1917;
+  --color-tinta-soft: #5E5A53;
+  --color-aspal: #1C1B19;
+  --color-aspal-2: #2A2825;
+  --color-marka: #F5B800;
+  --color-led: #FF9F1C;
+
+  --font-display: "Archivo Variable", sans-serif;
+  --font-body: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-led: "Doto", monospace;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-hand: "Caveat", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-kertas);
+  color: var(--color-tinta);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom utility styles */
+.karcis-line {
+  border-top: 2px dashed var(--color-garis);
+}
+
+.led-glow {
+  text-shadow: 0 0 8px rgba(255, 159, 28, 0.7);
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none;
+  }
+}
+
+/* Rel rute: sejajar dengan container max-w-[1400px] */
+.rail-wrap {
+  left: max(1.25rem, calc(50% - 700px));
+}

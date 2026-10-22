@@ -1,0 +1,13 @@
+---
+interface Props {
+  km: string;
+  note: string;
+}
+
+const { km, note } = Astro.props;
+---
+
+<div class="my-12 flex items-center gap-4 py-4 px-6 bg-[var(--color-kertas-2)] border-l-4 border-[var(--color-marka)] max-w-xl mx-auto">
+  <span class="font-['DM_Mono'] font-bold text-xs bg-[var(--color-tinta)] text-[var(--color-kertas)] px-2.5 py-1">PATOK {km}</span>
+  <p class="font-['Instrument_Sans'] text-sm sm:text-base text-[var(--color-tinta-soft)] italic">“{note}”</p>
+</div>

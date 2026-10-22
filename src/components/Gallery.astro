@@ -1,0 +1,61 @@
+---
+import WindowFrame from "./WindowFrame.astro";
+import type { Day } from "../types";
+
+interface Props {
+  days: Day[];
+}
+
+const { days } = Astro.props;
+const filters = [
+  { id: "semua", label: "Semua" },
+  ...days.map((d) => ({ id: d.id, label: `Hari ${d.day}` })),
+];
+---
+
+<section id="galeri" class="py-24 sm:py-32 bg-[var(--color-kertas-2)] border-y-2 border-[var(--color-garis)] scroll-mt-4">
+  <div class="mx-auto max-w-[1400px] px-5">
+    <div class="flex flex-wrap items-end justify-between gap-6 border-b-2 border-[var(--color-tinta)] pb-5">
+      <div>
+        <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)] mb-2">Bagian 04</p>
+        <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.9]">Dari Balik<br />Jendela</h2>
+      </div>
+      <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">yang terlewat lewat kaca, kami simpan di sini</p>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter foto per hari">
+      {filters.map((f, i) => (
+        <button
+          type="button"
+          data-filter={f.id}
+          class={`filter-chip font-['DM_Mono'] text-xs uppercase tracking-[0.12em] px-4 py-2 border-2 border-[var(--color-tinta)] transition-colors ${i === 0 ? 'bg-[var(--color-tinta)] text-[var(--color-kertas)]' : 'bg-transparent text-[var(--color-tinta)] hover:bg-[var(--color-marka)]'}`}
+        >
+          {f.label}
+        </button>
+      ))}
+    </div>
+
+    <div class="mt-8 -mx-5 px-5 sm:-mx-8 sm:px-8 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:thin]">
+      {days.flatMap((d) =>
+        d.photos.map((p, idx) => (
+          <div class="snap-start shrink-0 w-[78vw] sm:w-[420px] gallery-item" data-day={d.id}>
+            <WindowFrame src={p.src} alt={p.alt} caption={p.caption} className="aspect-[4/3]" />
+            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.15em] text-[var(--color-tinta-soft)]">
+              Hari {d.day} · {d.location}
+            </p>
+          </div>
+        )),
+      )}
+    </div>
+  </div>
+</section>
+
+<dialog id="lightbox" class="backdrop:bg-black/85 border-none p-0 max-w-[92vw] max-h-[92vh] bg-[var(--color-aspal)]">
+  <div class="relative">
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-[92vw] object-contain block" />
+    <p id="lightbox-caption" class="font-['DM_Mono'] text-xs uppercase tracking-[0.15em] text-[var(--color-kertas)] px-4 py-3 text-center"></p>
+    <button type="button" id="lightbox-close" aria-label="Tutup galeri" class="absolute -top-3 -right-3 sm:-right-4 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none">×</button>
+    <button type="button" id="lightbox-prev" aria-label="Foto sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">‹</button>
+    <button type="button" id="lightbox-next" aria-label="Foto berikutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">›</button>
+  </div>
+</dialog>

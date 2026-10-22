@@ -1,0 +1,16 @@
+---
+interface Props {
+  dayNumber: number;
+  date: string;
+  isDark?: boolean;
+}
+
+const { dayNumber, date, isDark = false } = Astro.props;
+---
+
+<div class={`rambu inline-block p-3 sm:p-4 rounded-[10px] border-2 shadow-[3px_3px_0_currentColor] ${isDark ? 'bg-[var(--color-kertas)] text-[var(--color-tinta)] border-[var(--color-tinta)]' : 'bg-[var(--color-tinta)] text-[var(--color-kertas)] border-[var(--color-kertas)]'}`}>
+  <div class="flex items-baseline gap-3">
+    <span class="font-['Archivo'] font-black text-3xl sm:text-4xl tracking-tighter">HARI {dayNumber}</span>
+    <span class="font-['DM_Mono'] text-xs uppercase tracking-widest opacity-80">{date}</span>
+  </div>
+</div>

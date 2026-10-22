@@ -1,0 +1,98 @@
+[
+  {
+    "nickname": "Mega Novita",
+    "fullName": "Mega Novita, Ph.D",
+    "class": "Dosen",
+    "seat": "1A",
+    "role": "Dosen Pembimbing",
+    "photo": "/img/tim/mega-novita.webp"
+  },
+  {
+    "nickname": "Gizza",
+    "fullName": "Gizza Hanna Farhataini Hapsari",
+    "class": "5A",
+    "seat": "2A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/gizza.webp"
+  },
+  {
+    "nickname": "Ivan",
+    "fullName": "Ivan Akbar Alfahrezi",
+    "class": "5A",
+    "seat": "2B",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/ivan.webp"
+  },
+  {
+    "nickname": "Zawa",
+    "fullName": "Adinda Zahwa Aprilia",
+    "class": "5D",
+    "seat": "3A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/zawa.webp"
+  },
+  {
+    "nickname": "Khaizun",
+    "fullName": "Achmad Khaizun Ni'am",
+    "class": "5A",
+    "seat": "3B",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/khaizun.webp"
+  },
+  {
+    "nickname": "Ditsa",
+    "fullName": "Ditsa Ardiva Prananda Putra",
+    "class": "5B",
+    "seat": "4A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/ditsa.webp"
+  },
+  {
+    "nickname": "Dipo",
+    "fullName": "Dipo Trista Elmunbaits",
+    "class": "5B",
+    "seat": "4B",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/dipo.webp"
+  },
+  {
+    "nickname": "Rendi",
+    "fullName": "Rendi Dwiki Hermawan",
+    "class": "5D",
+    "seat": "5A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/rendi.webp"
+  },
+  {
+    "nickname": "Carendra",
+    "fullName": "Carendra Aldiansyah",
+    "class": "5D",
+    "seat": "5B",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/carendra.webp"
+  },
+  {
+    "nickname": "Aziz",
+    "fullName": "Aziz Wijayanto",
+    "class": "5E",
+    "seat": "6A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/aziz.webp"
+  },
+  {
+    "nickname": "Heru",
+    "fullName": "Heru Pamungkas Prasetyo Bayuaji",
+    "class": "5E",
+    "seat": "6B",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/heru.webp"
+  },
+  {
+    "nickname": "Ikhsan",
+    "fullName": "Ikhsan Gusti Hermawan",
+    "class": "5E",
+    "seat": "7A",
+    "role": "Mahasiswa Informatika",
+    "photo": "/img/tim/ikhsan.webp"
+  }
+]

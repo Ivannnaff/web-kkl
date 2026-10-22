@@ -1,0 +1,14 @@
+---
+interface Props {
+  text?: string;
+}
+
+const { text = "SEMARANG ● SURABAYA ● KETAPANG ● GILIMANUK ● BALI ● TIM 9 INFORMATIKA" } = Astro.props;
+---
+
+<div class="bg-[#0A0A09] text-[var(--color-led)] font-['Doto'] overflow-hidden whitespace-nowrap py-3 px-4 border-y-2 border-[#2A2825] shadow-inner">
+  <div class="animate-ticker">
+    <span class="led-glow px-4">▓ {text} ▓&nbsp;</span>
+    <span class="led-glow px-4" aria-hidden="true">▓ {text} ▓&nbsp;</span>
+  </div>
+</div>

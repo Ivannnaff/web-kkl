@@ -1,0 +1,376 @@
+---
+import "../styles/global.css";
+
+import LedSign from "../components/LedSign.astro";
+import Karcis from "../components/Karcis.astro";
+import PatokKm from "../components/PatokKm.astro";
+import Gallery from "../components/Gallery.astro";
+import SeatMap from "../components/SeatMap.astro";
+import VideoVlog from "../components/VideoVlog.astro";
+import Day1 from "../components/Day1.astro";
+import Day2 from "../components/Day2.astro";
+import Day3 from "../components/Day3.astro";
+import Day4 from "../components/Day4.astro";
+import Day5 from "../components/Day5.astro";
+
+import daysData from "../data/days.json";
+import teamData from "../data/team.json";
+import siteData from "../data/site.json";
+
+import type { Day, Member } from "../types";
+
+const days = daysData as Day[];
+const members = teamData as Member[];
+---
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jejak Dewata — KKL Bali 2026 Tim 9</title>
+    <meta name="description" content={siteData.subtitle} />
+    <meta property="og:title" content="Jejak Dewata — KKL Bali 2026 Tim 9" />
+    <meta property="og:description" content={siteData.subtitle} />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta name="theme-color" content="#1C1B19" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚌</text></svg>" />
+  </head>
+  <body class="bg-[var(--color-kertas)] text-[var(--color-tinta)] selection:bg-[var(--color-marka)] selection:text-[var(--color-tinta)]">
+    <!-- Skip link -->
+    <a href="#rute" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-[var(--color-marka)] focus:text-[var(--color-tinta)]">
+      Langsung ke rute perjalanan
+    </a>
+
+    <!-- Navigasi Minimal -->
+    <header class="sticky top-0 z-40 bg-[var(--color-kertas)]/90 backdrop-blur-md border-b-2 border-[var(--color-tinta)]">
+      <div class="mx-auto max-w-[1400px] px-5 h-16 flex items-center justify-between">
+        <a href="#hero" class="font-['Archivo'] font-black uppercase tracking-tighter text-lg sm:text-xl">
+          JEJAK DEWATA <span class="text-[var(--color-marka)] bg-[var(--color-tinta)] px-1.5 py-0.5 text-xs">TIM 9</span>
+        </a>
+        <nav class="flex items-center gap-4 sm:gap-8 font-['DM_Mono'] text-xs uppercase tracking-widest">
+          <a href="#manifest" class="hover:text-[var(--color-marka)] transition-colors hidden sm:inline">Manifest</a>
+          <a href="#hari-1" class="hover:text-[var(--color-marka)] transition-colors">Rute</a>
+          <a href="#galeri" class="hover:text-[var(--color-marka)] transition-colors">Galeri</a>
+          <a href="#vlog" class="hover:text-[var(--color-marka)] transition-colors hidden sm:inline">Vlog</a>
+          <a href="#tim" class="hover:text-[var(--color-marka)] transition-colors">Tim</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="hero">
+      <!-- 6.1 Hero — Papan Tujuan -->
+      <section class="bg-[var(--color-aspal)] text-[var(--color-kertas)] min-h-[calc(100vh-4rem)] flex flex-col justify-between relative overflow-hidden">
+        <LedSign text={siteData.route} />
+
+        <div class="mx-auto max-w-[1400px] px-5 py-12 sm:py-20 w-full grid lg:grid-cols-12 gap-10 items-center">
+          <!-- Kolom Kiri: Judul & Karcis -->
+          <div class="lg:col-span-7 z-10">
+            <p class="font-['DM_Mono'] text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--color-led)] mb-3">
+              {siteData.eyebrow}
+            </p>
+            <h1 class="font-['Archivo'] font-black uppercase tracking-tighter text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] text-[var(--color-kertas)]">
+              JEJAK<br />DEWATA
+            </h1>
+            <p class="mt-6 font-['Instrument_Sans'] text-lg sm:text-xl text-[var(--color-kertas)]/80 max-w-xl leading-relaxed">
+              {siteData.subtitle}
+            </p>
+
+            <div class="mt-8 max-w-md -rotate-1 sm:-rotate-2">
+              <Karcis>
+                <div class="font-['DM_Mono'] text-xs sm:text-sm text-[var(--color-tinta)] tracking-wider space-y-1">
+                  <p class="font-bold">{siteData.ticket.tim} · {siteData.ticket.tanggal}</p>
+                  <p class="text-[var(--color-tinta-soft)]">{siteData.ticket.penumpang} · {siteData.ticket.dospem}</p>
+                </div>
+              </Karcis>
+            </div>
+
+            <div class="mt-10 flex items-center gap-6">
+              <a
+                href="#manifest"
+                class="inline-flex items-center gap-3 font-['Archivo'] font-black uppercase tracking-wider text-sm bg-[var(--color-marka)] text-[var(--color-tinta)] px-6 py-4 border-2 border-[var(--color-tinta)] shadow-[4px_4px_0_var(--color-kertas)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_var(--color-kertas)] transition-all"
+              >
+                <span>Naik Bus</span>
+                <span class="text-lg">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Foto Bingkai Kaca Depan -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-t-[36px] border-[14px] border-[#111] bg-[#111] overflow-hidden shadow-2xl rotate-1 sm:rotate-2">
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent pointer-events-none z-10"></div>
+              <img
+                src="/img/hero/bus-kaca-depan.webp"
+                alt="Pemandangan dari kaca depan bus Tim 9"
+                class="w-full aspect-[4/5] object-cover"
+                fetchpriority="high"
+              />
+              <div class="absolute bottom-0 inset-x-0 bg-[#111]/90 backdrop-blur-sm p-4 text-center font-['DM_Mono'] text-xs tracking-widest text-[var(--color-led)]">
+                ● LIVE DASHBOARD · BUS TIM 9
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garis marka kuning putus-putus bawah hero -->
+        <div class="border-b-2 border-dashed border-[var(--color-marka)] mx-5 my-6"></div>
+      </section>
+
+      <!-- 6.2 Manifest -->
+      <section id="manifest" class="py-24 sm:py-32 bg-[var(--color-kertas)] border-b-2 border-[var(--color-garis)] scroll-mt-4">
+        <div class="mx-auto max-w-[1000px] px-5 text-center">
+          <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)] mb-4">Manifest Perjalanan</p>
+          <blockquote class="font-['Archivo'] font-black text-3xl sm:text-6xl tracking-tight leading-[1.1] text-[var(--color-tinta)]">
+            {siteData.manifest}
+          </blockquote>
+
+          <div class="mt-16 inline-flex flex-wrap items-center justify-center gap-6 sm:gap-12 bg-[var(--color-kertas-2)] border-2 border-[var(--color-tinta)] p-6 sm:p-8 shadow-[6px_6px_0_var(--color-tinta)]">
+            <div class="text-center">
+              <p class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">Total Jarak</p>
+              <p class="mt-2 font-['Doto'] text-3xl sm:text-5xl text-[var(--color-led)] led-glow bg-[var(--color-aspal)] px-4 py-2 border border-[var(--color-tinta)]">
+                {siteData.odometer.totalKm} KM
+              </p>
+            </div>
+            <div class="text-center">
+              <p class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">Waktu di Jalan</p>
+              <p class="mt-2 font-['Doto'] text-3xl sm:text-5xl text-[var(--color-led)] led-glow bg-[var(--color-aspal)] px-4 py-2 border border-[var(--color-tinta)]">
+                {siteData.odometer.jamDiJalan} JAM
+              </p>
+            </div>
+            <div class="text-center">
+              <p class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">Konvoi Bus</p>
+              <p class="mt-2 font-['Doto'] text-3xl sm:text-5xl text-[var(--color-led)] led-glow bg-[var(--color-aspal)] px-4 py-2 border border-[var(--color-tinta)]">
+                1 UNIT
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6.3 Perjalanan — Rute (5 Hari dengan Rel & Bus di kiri) -->
+      <section id="rute" class="relative">
+        <!-- Rel marka kuning di kiri (desktop) -->
+        <div class="rail-wrap absolute top-0 bottom-0 w-[72px] hidden lg:block z-30 pointer-events-none" id="rail-wrap">
+          <div class="absolute left-[32px] top-0 bottom-0 w-[4px] bg-[var(--color-marka)]" style="background-image: repeating-linear-gradient(to bottom, var(--color-marka) 0 24px, transparent 24px 44px)"></div>
+          <svg id="bus" class="absolute left-[16px] top-12 w-9 h-16 text-[var(--color-tinta)] drop-shadow" viewBox="0 0 36 64" fill="currentColor">
+            <rect x="4" y="4" width="28" height="56" rx="6" fill="#1C1B19" stroke="#F5B800" stroke-width="2"/>
+            <rect x="8" y="10" width="20" height="10" rx="2" fill="#F2EFE9"/>
+            <rect x="8" y="44" width="20" height="8" rx="1" fill="#F5B800"/>
+          </svg>
+        </div>
+
+        <div>
+          <Day1 data={days[0]} />
+          <PatokKm km={siteData.patok[0].km} note={siteData.patok[0].note} />
+
+          <Day2 data={days[1]} />
+          <PatokKm km={siteData.patok[1].km} note={siteData.patok[1].note} />
+
+          <Day3 data={days[2]} />
+          <PatokKm km={siteData.patok[2].km} note={siteData.patok[2].note} />
+
+          <Day4 data={days[3]} />
+          <PatokKm km={siteData.patok[3].km} note={siteData.patok[3].note} />
+
+          <Day5 data={days[4]} />
+          <div class="bg-[var(--color-aspal)] py-6">
+            <PatokKm km={siteData.patok[4].km} note={siteData.patok[4].note} />
+          </div>
+        </div>
+      </section>
+
+      <!-- 6.4 Galeri — Dari Balik Jendela -->
+      <Gallery days={days} />
+
+      <!-- 6.5 Vlog Perjalanan -->
+      <VideoVlog vlog={siteData.vlog} />
+
+      <!-- 6.6 Tim — Denah Kursi -->
+      <SeatMap members={members} />
+
+      <!-- 6.6 Penutup — Turun di Terminal -->
+      <section class="py-24 sm:py-36 bg-[var(--color-aspal)] text-[var(--color-kertas)] text-center relative overflow-hidden">
+        <div class="mx-auto max-w-[900px] px-5 relative z-10">
+          <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-led)] mb-4">Terminal Akhir</p>
+          <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-7xl leading-[0.95]">
+            {siteData.closing.title}
+          </h2>
+          <p class="mt-8 font-['Instrument_Sans'] text-lg sm:text-xl text-[var(--color-kertas)]/85 max-w-2xl mx-auto leading-relaxed">
+            {siteData.closing.body}
+          </p>
+          <div class="mt-12 inline-block">
+            <span class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] border-2 border-[var(--color-kertas)] px-6 py-3 block">
+              Dosen Pembimbing: Mega Novita, Ph.D
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#111] text-[var(--color-kertas)]/60 font-['DM_Mono'] text-xs py-8 px-5 border-t-2 border-[#2A2825]">
+      <div class="mx-auto max-w-[1400px] flex flex-wrap items-center justify-between gap-4">
+        <p>© 2026 Tim 9 Informatika · KKL Bali</p>
+        <p>Jejak Dewata — Dibuat dengan Astro & Tailwind</p>
+      </div>
+    </footer>
+
+    <!-- Lightbox & Interactive Script -->
+    <script>
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      gsap.registerPlugin(ScrollTrigger);
+
+      // GSAP Animations
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Bus di rel mengikuti scroll di section #rute
+        const railWrap = document.querySelector("#rail-wrap");
+        const ruteSec = document.querySelector("#rute");
+        if (railWrap && ruteSec) {
+          gsap.to("#bus", {
+            y: () => ruteSec.offsetHeight - 120,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ruteSec,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: true,
+            },
+          });
+        }
+
+        // Rambu dipasang
+        gsap.utils.toArray(".rambu").forEach((el: any) =>
+          gsap.from(el, {
+            yPercent: -100,
+            rotate: -3,
+            duration: 0.6,
+            ease: "back.out(1.5)",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+          }),
+        );
+
+        // Foto tirai
+        gsap.utils.toArray(".reveal-tirai").forEach((el: any) =>
+          gsap.fromTo(
+            el,
+            { clipPath: "inset(0 100% 0 0)" },
+            {
+              clipPath: "inset(0 0% 0 0)",
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: { trigger: el, start: "top 88%", once: true },
+            },
+          ),
+        );
+      });
+
+      // Odometer: angka berputar saat pertama terlihat
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelectorAll(".led-odometer").forEach((el) => {
+        const from = parseInt(el.getAttribute("data-from") || "0", 10);
+        const to = parseInt(el.getAttribute("data-to") || "0", 10);
+        const pad = parseInt(el.getAttribute("data-pad") || "0", 10);
+        const write = (v: number) => {
+          el.textContent = String(Math.max(0, Math.round(v))).padStart(pad, "0");
+        };
+        if (reduceMotion) {
+          write(to);
+          return;
+        }
+        const obj = { v: from };
+        gsap.to(obj, {
+          v: to,
+          duration: 2.2,
+          ease: "power1.inOut",
+          onUpdate: () => write(obj.v),
+          scrollTrigger: { trigger: el, start: "top 90%", once: true },
+        });
+      });
+
+      // Gallery Filter
+      const chips = document.querySelectorAll(".filter-chip");
+      const items = document.querySelectorAll(".gallery-item");
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chips.forEach((c) => {
+            c.classList.remove("bg-[var(--color-tinta)]", "text-[var(--color-kertas)]");
+            c.classList.add("bg-transparent", "text-[var(--color-tinta)]");
+          });
+          chip.classList.remove("bg-transparent", "text-[var(--color-tinta)]");
+          chip.classList.add("bg-[var(--color-tinta)]", "text-[var(--color-kertas)]");
+
+          const dayId = chip.getAttribute("data-filter");
+          items.forEach((item: any) => {
+            if (dayId === "semua" || item.getAttribute("data-day") === dayId) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Lightbox Dialog
+      const dialog = document.getElementById("lightbox") as HTMLDialogElement;
+      const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement;
+      const lightboxCaption = document.getElementById("lightbox-caption") as HTMLParagraphElement;
+      const closeBtn = document.getElementById("lightbox-close");
+      const triggers = document.querySelectorAll(".gallery-trigger");
+
+      let currentIndex = 0;
+      const triggerArr = Array.from(triggers) as HTMLImageElement[];
+
+      function openLightbox(index: number) {
+        currentIndex = index;
+        const img = triggerArr[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.getAttribute("data-caption") || "";
+        if (dialog && !dialog.open) dialog.showModal();
+      }
+
+      triggers.forEach((trig, idx) => {
+        trig.addEventListener("click", () => openLightbox(idx));
+      });
+
+      closeBtn?.addEventListener("click", () => dialog?.close());
+      document.getElementById("lightbox-prev")?.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + triggerArr.length) % triggerArr.length;
+        openLightbox(currentIndex);
+      });
+      document.getElementById("lightbox-next")?.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % triggerArr.length;
+        openLightbox(currentIndex);
+      });
+
+      dialog?.addEventListener("click", (e) => {
+        const rect = dialog.getBoundingClientRect();
+        if (
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom
+        ) {
+          dialog.close();
+        }
+      });
+
+      // Seat Map interactive highlight
+      const seats = document.querySelectorAll(".seat");
+      seats.forEach((seatBtn) => {
+        seatBtn.addEventListener("click", () => {
+          const seatNo = seatBtn.getAttribute("data-seat");
+          document.querySelectorAll(".seat-tag").forEach((t) => t.classList.remove("is-active"));
+          const tag = document.getElementById(`tag-${seatNo}`);
+          if (tag) {
+            tag.classList.add("is-active");
+            tag.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

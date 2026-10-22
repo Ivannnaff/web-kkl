@@ -1,0 +1,44 @@
+{
+  "title": "Jejak Dewata",
+  "eyebrow": "KKL BALI 2026 · TIM 9 · INFORMATIKA",
+  "subtitle": "Lima hari, satu bus, sebelas penumpang. Catatan perjalanan kami dari Semarang ke Pulau Dewata.",
+  "route": "SEMARANG ● SURABAYA ● KETAPANG ● GILIMANUK ● BALI ● SEMARANG",
+  "ticket": {
+    "tim": "TIM 9",
+    "tanggal": "18–22 AGU 2025",
+    "penumpang": "11 PENUMPANG",
+    "dospem": "DOSPEM: MEGA NOVITA, Ph.D"
+  },
+  "manifest": "Lima hari. Sebelas penumpang. Satu bus. Dan satu dosen yang duduk paling depan.",
+  "odometer": {
+    "totalKm": 1204,
+    "jamDiJalan": 19
+  },
+  "vlog": {
+    "eyebrow": "Rekaman TAMU",
+    "title": "Vlog Perjalanan",
+    "subtitle": "Potongan footage langsung dari bus, dari Semarang sampai whistle terakhir di Semarang.",
+    "poster": "/img/vlog/poster.webp",
+    "youtubeId": "",
+    "file": "",
+    "duration": "04:12",
+    "chapters": [
+      { "time": "00:00", "label": "Berangkat dari Semarang", "jump": 0 },
+      { "time": "01:04", "label": "Pabrik & ruang kendali", "jump": 64 },
+      { "time": "02:10", "label": "Beratan & Devdan Show", "jump": 130 },
+      { "time": "03:05", "label": "Tari Kecak saat matahari turun", "jump": 185 },
+      { "time": "03:48", "label": "Roda berhenti, cerita belum", "jump": 228 }
+    ]
+  },
+  "patok": [
+    { "km": "KM 0", "note": "Berangkat dari Semarang. Bus masih kosong, playlist sudah siap." },
+    { "km": "KM 412", "note": "Malam di jalan. Lagu di speaker bergantian, Ditsa tidur duluan, Gizza paling lama melek." },
+    { "km": "KM 668", "note": "Jajanan di perbatasan Jawa Timur. Onde-onde menahan bus beserta suara pakdriver." },
+    { "km": "KM 1.088", "note": "Selat Bali. Angin masuk dari jendela, semua orang mengunggah foto ke grup." },
+    { "km": "KM 0", "note": "Kembali ke Semarang dalam 9 jam. Roda berhenti, cerita belum." }
+  ],
+  "closing": {
+    "title": "Turun di Semarang. Hati masih di Bali.",
+    "body": "Kami pulang membawa lebih dari oleh-oleh: ilmu dari industri, pelajaran dari budaya, dan kenangan dari sesama teman seperjuangan. Terima kasih kepada Ibu Mega Novita, Ph.D, atas bimbingannya, serta semua pihak yang membuat perjalanan ini mungkin."
+  }
+}

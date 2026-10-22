@@ -1,0 +1,87 @@
+---
+import Rambu from "./Rambu.astro";
+import type { Day } from "../types";
+
+interface Props {
+  data: Day;
+}
+
+const { data } = Astro.props;
+const [pagi, malam] = data.photos;
+---
+
+<section id={data.id} class="relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
+  <div class="mx-auto max-w-[1400px] px-5 lg:pl-[92px]">
+    <div class="grid lg:grid-cols-[160px_1fr] gap-8">
+      <div class="lg:sticky lg:top-8 lg:self-start">
+        <Rambu dayNumber={data.day} date={data.date} />
+        <p class="mt-4 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.location}
+        </p>
+      </div>
+
+      <div class="min-w-0">
+        <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.category}
+        </p>
+        <h3 class="mt-2 font-['Archivo'] font-black uppercase tracking-tight leading-[0.95] text-3xl sm:text-5xl">
+          {data.title}
+        </h3>
+
+        <!-- Dua babak vertikal: PAGI terang / MALAM gelap -->
+        <div class="mt-10 grid md:grid-cols-2 gap-0 border-2 border-[var(--color-tinta)]">
+          <!-- Babak pagi -->
+          <div class="p-6 sm:p-8 bg-[var(--color-kertas)]">
+            <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">PAGI</p>
+            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+              Ulun Danu Beratan · Kabut &_air tenang
+            </p>
+            <img
+              src={pagi.src}
+              alt={pagi.alt}
+              loading="lazy"
+              class="reveal-tirai mt-6 w-full aspect-[16/9] object-cover border-2 border-[var(--color-tinta)]"
+            />
+            <p class="mt-4 text-[0.98rem] leading-relaxed">{data.description.split(".")[0]}.</p>
+          </div>
+
+          <!-- Babak malam -->
+          <div class="p-6 sm:p-8 bg-[var(--color-aspal)] text-[var(--color-kertas)] relative overflow-hidden">
+            <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">MALAM</p>
+            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-kertas)]/60">
+              Devdan Show · Nusa Dua Theatre
+            </p>
+            <img
+              src={malam.src}
+              alt={malam.alt}
+              loading="lazy"
+              class="reveal-tirai mt-6 w-[115%] max-w-none aspect-[3/4] object-cover border-2 border-[var(--color-kertas)]/30 -translate-x-2 sm:-translate-x-6"
+            />
+            <p class="mt-6 text-[0.98rem] leading-relaxed text-[var(--color-kertas)]/90">
+              {data.description.split(".").slice(1).join(".").trim()}
+            </p>
+          </div>
+        </div>
+
+        <!-- Panorama keluar dari tepi -->
+        <figure class="relative mt-10 -mr-5 sm:-mr-16 lg:-mr-32">
+          <img
+            src={data.photos[1]?.src}
+            alt={data.photos[1]?.alt}
+            loading="lazy"
+            class="reveal-tirai w-full aspect-[21/9] object-cover border-y-2 border-[var(--color-tinta)]"
+          />
+          <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)]">
+            {data.photos[1]?.caption}
+          </figcaption>
+        </figure>
+
+        <blockquote class="mt-10 border-l-4 border-[var(--color-marka)] pl-5">
+          <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug -rotate-1">“{data.quote}”</p>
+        </blockquote>
+
+
+      </div>
+    </div>
+  </div>
+</section>

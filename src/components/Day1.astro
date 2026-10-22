@@ -1,0 +1,67 @@
+---
+import Rambu from "./Rambu.astro";
+import type { Day } from "../types";
+
+interface Props {
+  data: Day;
+}
+
+const { data } = Astro.props;
+---
+
+<section id={data.id} class="relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
+  <div class="mx-auto max-w-[1400px] px-5 lg:pl-[92px]">
+    <div class="grid lg:grid-cols-[160px_1fr] gap-8">
+      <!-- Rambu sticky -->
+      <div class="lg:sticky lg:top-8 lg:self-start">
+        <Rambu dayNumber={data.day} date={data.date} />
+        <p class="mt-4 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.location}
+        </p>
+      </div>
+
+      <!-- Konten -->
+      <div class="min-w-0">
+        <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+          {data.category}
+        </p>
+        <h3 class="mt-2 font-['Archivo'] font-black uppercase tracking-tight leading-[0.95] text-3xl sm:text-5xl">
+          {data.title}
+        </h3>
+
+        <!-- Kutipan besar memenuhi lebar (nuansa dokumen/lembar kerja) -->
+        <figure class="mt-8 border-y-2 border-[var(--color-tinta)] py-6 sm:py-8">
+          <blockquote class="font-['Archivo'] font-semibold leading-[1.15] text-2xl sm:text-4xl tracking-tight">
+            <span class="text-[var(--color-marka)]">“</span>{data.quote}<span class="text-[var(--color-marka)]">”</span>
+          </blockquote>
+        </figure>
+
+        <p class="mt-8 max-w-2xl text-[1.05rem] leading-[1.65] text-[var(--color-tinta)]">
+          {data.description}
+        </p>
+
+        <!-- Tiga foto kecil ditumpuk seperti ditempel selotip -->
+        <div class="mt-12 flex flex-wrap gap-6 sm:gap-10">
+          {data.photos.map((p, i) => (
+            <figure class={`relative ${
+              i === 0 ? "sm:rotate-[-2deg] sm:-ml-2" : i === 1 ? "sm:rotate-[1.5deg] sm:mt-10" : "sm:rotate-[-1deg] sm:mt-4"
+            }`}>
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-[var(--color-marka)]/70 rotate-[-3deg]"></div>
+              <img
+                src={p.src}
+                alt={p.alt}
+                loading="lazy"
+                class="reveal-tirai w-[200px] sm:w-[240px] h-[240px] sm:h-[280px] object-cover border-4 border-[var(--color-kertas)] shadow-[4px_4px_0_var(--color-tinta)]"
+              />
+              <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)] max-w-[240px]">
+                {p.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

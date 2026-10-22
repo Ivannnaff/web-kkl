@@ -1,0 +1,137 @@
+[
+  {
+    "id": "hari-1",
+    "day": 1,
+    "date": "18 Agustus 2025",
+    "title": "Kunjungan Industri PT. Victoria Care Indonesia",
+    "location": "Semarang",
+    "category": "Industrial",
+    "description": "Hari pertama perjalanan dimulai dengan kunjungan edukatif ke fasilitas produksi modern PT. Victoria Care Indonesia di Semarang. Kami mengamati langsung penerapan sistem otomasi lini produksi, manajemen logistik, dan kontrol kualitas berbasis data yang sangat relevan dengan disiplin ilmu Informatika.",
+    "quote": "Standar operasional berstandar internasional yang menginspirasi mahasiswa Informatika dalam memahami sistem enterprise.",
+    "photos": [
+      {
+        "src": "/img/day1/01-foto.webp",
+        "alt": "Mahasiswa mengamati langsung robot lengan di lini produksi",
+        "caption": "Lini produksi otomatis yang kami amati tadi"
+      },
+      {
+        "src": "/img/day1/02-foto.webp",
+        "alt": "Tim 9 berdiskusi bersama petugas pabrik",
+        "caption": "Sesi diskusi bersama tim operasional pabrik"
+      },
+      {
+        "src": "/img/day1/03-foto.webp",
+        "alt": "Ruang kerja dengan monitor menampilkan data QC",
+        "caption": "Angka-angka QC yang jadi bahan diskusi kami"
+      }
+    ]
+  },
+  {
+    "id": "hari-2",
+    "day": 2,
+    "date": "19 Agustus 2025",
+    "title": "Pura Ulun Danu Beratan & Devdan Show",
+    "location": "Bedugul & Badung, Bali",
+    "category": "Culture & Art",
+    "description": "Perjalanan dibagi menjadi dua babak kontras: kesyahduan pagi di Pura Ulun Danu Beratan yang dikelilingi kabut dan danau, dilanjutkan dengan kemegahan pertunjukan panggung spektakuler Devdan Show di Bali Nusa Dua Theatre pada malam harinya.",
+    "quote": "Harmoni sempurna antara keagungan alam pegunungan dan kecanggihan panggung multimedia modern.",
+    "photos": [
+      {
+        "src": "/img/day2/01-foto.webp",
+        "alt": "Pura Ulun Danu Beratan berdiri di atas danau berkabut",
+        "caption": "Pura Ulun Danu Beratan, bukti kami sampai di Bali"
+      },
+      {
+        "src": "/img/day2/02-foto.webp",
+        "alt": "Detail atap pura dan gerobak di tepi danau",
+        "caption": "Detail kecil di tepi Danau Beratan"
+      },
+      {
+        "src": "/img/day2/03-foto.webp",
+        "alt": "Pertunjukan panggung dengan pencahayaan dramatis",
+        "caption": "Kemegahan panggung dan tata cahaya spektakuler"
+      }
+    ]
+  },
+  {
+    "id": "hari-3",
+    "day": 3,
+    "date": "20 Agustus 2025",
+    "title": "Balai Diklat Industri Bali, Pantai Kuta & Tari Kecak",
+    "location": "Denpasar & Kuta",
+    "category": "Education & Show",
+    "description": "Kunjungan pagi ke Balai Diklat Industri Bali memberikan wawasan mendalam tentang inkubasi talenta digital dan animasi. Sore harinya, kami menikmati panorama matahari terbenam di Pantai Kuta sebelum ditutup dengan magisnya pementasan Tari Kecak Pandawa.",
+    "quote": "Kombinasi antara pengembangan skill digital masa depan dan pelestarian tradisi leluhur yang magis.",
+    "photos": [
+      {
+        "src": "/img/day3/01-foto.webp",
+        "alt": "Mahasiswa duduk di ruang kelas dengan laptop",
+        "caption": "Sesi pemaparan teknologi digital di BDI Bali"
+      },
+      {
+        "src": "/img/day3/02-foto.webp",
+        "alt": "Pemandangan sawah berteras di Bali",
+        "caption": "Angin sore di sawah berteras"
+      },
+      {
+        "src": "/img/day3/03-foto.webp",
+        "alt": "Penari Tari Kecak dengan api yang menyala",
+        "caption": "Magisnya kobaran api dan gerak tari Kecak Pandawa"
+      }
+    ]
+  },
+  {
+    "id": "hari-4",
+    "day": 4,
+    "date": "21 Agustus 2025",
+    "title": "Eksplorasi Bebas & Kuliner Bali Journey",
+    "location": "Gianyar & Denpasar",
+    "category": "Exploration",
+    "description": "Hari paling santai dan seru! Tim 9 bebas mengeksplorasi sudut-sudut Pulau Bali, berburu buah tangan autentik, mencicipi kuliner khas seperti Ayam Betutu dan Lawar, serta merajut gelak tawa dalam kebersamaan persahabatan.",
+    "quote": "Waktu terbaik untuk melepas penat, menikmati sudut otentik Bali, dan mempererat kebersamaan.",
+    "photos": [
+      {
+        "src": "/img/day4/01-foto.webp",
+        "alt": "Kendaraan dan pasar seni di Bali",
+        "caption": "Menjelajahi sentra kerajinan dan oleh-oleh khas Bali"
+      },
+      {
+        "src": "/img/day4/02-foto.webp",
+        "alt": "Aneka hidangan lokal tersaji di meja",
+        "caption": "Mencicipi kekayaan kuliner lokal bersama tim"
+      },
+      {
+        "src": "/img/day4/03-foto.webp",
+        "alt": "Pasar rakyat dengan barang dagangan segar",
+        "caption": "Momen santai mengitari pasar desa"
+      }
+    ]
+  },
+  {
+    "id": "hari-5",
+    "day": 5,
+    "date": "22 Agustus 2025",
+    "title": "Kepulangan Menuju Semarang",
+    "location": "Gilimanuk — Ketapang — Surabaya — Semarang",
+    "category": "Return",
+    "description": "Perjalanan darat panjang kembali ke Semarang melintasi selat Bali dan jalan tol trans-Jawa. Di dalam bus, obrolan hangat, evaluasi perjalanan, dan lantunan musik menutup rangkaian KKL dengan penuh rasa syukur.",
+    "quote": "Roda bus berputar membawa kami pulang, namun kenangan dan ilmu di Bali tetap tinggal.",
+    "photos": [
+      {
+        "src": "/img/day5/01-foto.webp",
+        "alt": "Bus dalam perjalanan malam di jalan tol",
+        "caption": "Perjalanan malam kembali ke kota asal"
+      },
+      {
+        "src": "/img/day5/02-foto.webp",
+        "alt": "Jalan raya panjang yang membelah lanskap",
+        "caption": "Menembus kilometer demi kilometer menuju Semarang"
+      },
+      {
+        "src": "/img/day5/03-foto.webp",
+        "alt": "Tas ransel dan barang bawaan perjalanan",
+        "caption": "Oleh-oleh dan koper penuh kenangan di bagasi bus"
+      }
+    ]
+  }
+]
