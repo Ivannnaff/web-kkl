@@ -23,7 +23,8 @@
   --font-hand: "Caveat", cursive;
 }
 
-html {
+html, body {
+  overflow-x: clip;
   scroll-behavior: smooth;
   background-color: var(--color-kertas);
   color: var(--color-tinta);
