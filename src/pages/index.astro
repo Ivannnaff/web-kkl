@@ -336,31 +336,59 @@ const members = teamData as Member[];
       const dialog = document.getElementById("lightbox") as HTMLDialogElement;
       const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement;
       const closeBtn = document.getElementById("lightbox-close");
-      const triggers = document.querySelectorAll(".gallery-trigger");
 
+      let currentList: HTMLImageElement[] = [];
       let currentIndex = 0;
-      const triggerArr = Array.from(triggers) as HTMLImageElement[];
 
-      function openLightbox(index: number) {
-        currentIndex = index;
-        const img = triggerArr[currentIndex];
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+      function getActiveTriggers(): HTMLImageElement[] {
+        const list: HTMLImageElement[] = [];
+        document.querySelectorAll(".gallery-item").forEach((item: any) => {
+          if (item.style.display !== "none") {
+            const trig = item.querySelector(".gallery-trigger");
+            if (trig) list.push(trig as HTMLImageElement);
+          }
+        });
+        return list;
+      }
+
+      function updateLightboxImage() {
+        if (currentList.length === 0) return;
+        const img = currentList[currentIndex];
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        }
+      }
+
+      function openLightboxByTrigger(trig: HTMLImageElement) {
+        currentList = getActiveTriggers();
+        currentIndex = currentList.indexOf(trig);
+        if (currentIndex === -1) {
+          currentList = Array.from(document.querySelectorAll(".gallery-trigger")) as HTMLImageElement[];
+          currentIndex = currentList.indexOf(trig);
+        }
+        updateLightboxImage();
         if (dialog && !dialog.open) dialog.showModal();
       }
 
-      triggers.forEach((trig, idx) => {
-        trig.addEventListener("click", () => openLightbox(idx));
+      document.querySelectorAll(".gallery-trigger").forEach((trig) => {
+        trig.addEventListener("click", (e) => {
+          openLightboxByTrigger(e.currentTarget as HTMLImageElement);
+        });
       });
 
       closeBtn?.addEventListener("click", () => dialog?.close());
       document.getElementById("lightbox-prev")?.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + triggerArr.length) % triggerArr.length;
-        openLightbox(currentIndex);
+        currentList = getActiveTriggers();
+        if (currentList.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+        updateLightboxImage();
       });
       document.getElementById("lightbox-next")?.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % triggerArr.length;
-        openLightbox(currentIndex);
+        currentList = getActiveTriggers();
+        if (currentList.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentList.length;
+        updateLightboxImage();
       });
 
       dialog?.addEventListener("click", (e) => {
