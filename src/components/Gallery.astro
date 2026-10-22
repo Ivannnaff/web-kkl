@@ -63,11 +63,55 @@ const counts = categories
   </div>
 </section>
 
-<dialog id="lightbox" class="backdrop:bg-black/85 border-none p-0 max-w-[92vw] max-h-[92vh] bg-[var(--color-aspal)]">
-  <div class="relative">
-    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-[92vw] object-contain block" />
-    <button type="button" id="lightbox-close" aria-label="Tutup galeri" class="absolute -top-3 -right-3 sm:-right-4 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none">×</button>
-    <button type="button" id="lightbox-prev" aria-label="Foto sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">‹</button>
-    <button type="button" id="lightbox-next" aria-label="Foto berikutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">›</button>
+<dialog
+  id="lightbox"
+  aria-label="Pratinjau foto galeri"
+  class="m-auto p-0 border-0 bg-transparent max-w-[96vw] max-h-[96vh] overflow-visible backdrop:bg-black/90"
+>
+  <div class="relative flex items-center justify-center">
+    <img
+      id="lightbox-img"
+      src=""
+      alt=""
+      class="block max-h-[82vh] max-w-[86vw] object-contain border-2 border-[var(--color-kertas)]/20 bg-[var(--color-aspal)] shadow-[0_20px_60px_rgba(0,0,0,.7)]"
+    />
+    <button
+      type="button"
+      id="lightbox-close"
+      aria-label="Tutup galeri"
+      class="absolute -top-4 -right-4 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none shadow-[3px_3px_0_var(--color-tinta)]"
+    >×</button>
+    <button
+      type="button"
+      id="lightbox-prev"
+      aria-label="Foto sebelumnya"
+      class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none"
+    >‹</button>
+    <button
+      type="button"
+      id="lightbox-next"
+      aria-label="Foto berikutnya"
+      class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none"
+    >›</button>
   </div>
 </dialog>
+
+<style>
+  /* Tailwind preflight menghapus margin:auto bawaan <dialog>,
+     jadi kita paksa dialog benar-benar di tengah viewport. */
+  dialog#lightbox[open] {
+    position: fixed;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    max-width: 96vw;
+    max-height: 96vh;
+    margin: auto;
+    display: grid;
+    place-items: center;
+  }
+
+  dialog#lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+</style>
