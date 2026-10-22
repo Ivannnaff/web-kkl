@@ -1,16 +1,34 @@
 ---
 import WindowFrame from "./WindowFrame.astro";
-import type { Day } from "../types";
 
-interface Props {
-  days: Day[];
+interface GalleryPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+  category: string;
 }
 
-const { days } = Astro.props;
-const filters = [
+interface Props {
+  photos: GalleryPhoto[];
+}
+
+const { photos } = Astro.props;
+
+const categories = [
   { id: "semua", label: "Semua" },
-  ...days.map((d) => ({ id: d.id, label: `Hari ${d.day}` })),
+  { id: "Industrial", label: "Industrial" },
+  { id: "Culture & Art", label: "Culture & Art" },
+  { id: "Education & Show", label: "Education & Show" },
+  { id: "Exploration", label: "Exploration" },
+  { id: "Return", label: "Return" },
 ];
+
+const counts = categories
+  .map((c) => ({
+    ...c,
+    total: c.id === "semua" ? photos.length : photos.filter((p) => p.category === c.id).length,
+  }))
+  .filter((c) => c.total > 0);
 ---
 
 <section id="galeri" class="py-24 sm:py-32 bg-[var(--color-kertas-2)] border-y-2 border-[var(--color-garis)] scroll-mt-4">
@@ -23,29 +41,24 @@ const filters = [
       <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">yang terlewat lewat kaca, kami simpan di sini</p>
     </div>
 
-    <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter foto per hari">
-      {filters.map((f, i) => (
+    <div class="mt-8 flex flex-wrap gap-2" role="group" aria-label="Filter foto per kategori">
+      {counts.map((c, i) => (
         <button
           type="button"
-          data-filter={f.id}
+          data-filter={c.id}
           class={`filter-chip font-['DM_Mono'] text-xs uppercase tracking-[0.12em] px-4 py-2 border-2 border-[var(--color-tinta)] transition-colors ${i === 0 ? 'bg-[var(--color-tinta)] text-[var(--color-kertas)]' : 'bg-transparent text-[var(--color-tinta)] hover:bg-[var(--color-marka)]'}`}
         >
-          {f.label}
+          {c.label} <span class="opacity-60">({c.total})</span>
         </button>
       ))}
     </div>
 
     <div class="mt-8 -mx-5 px-5 sm:-mx-8 sm:px-8 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:thin]">
-      {days.flatMap((d) =>
-        d.photos.map((p, idx) => (
-          <div class="snap-start shrink-0 w-[78vw] sm:w-[420px] gallery-item" data-day={d.id}>
-            <WindowFrame src={p.src} alt={p.alt} caption={p.caption} className="aspect-[4/3]" />
-            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.15em] text-[var(--color-tinta-soft)]">
-              Hari {d.day} · {d.location}
-            </p>
-          </div>
-        )),
-      )}
+      {photos.map((p) => (
+        <div class="snap-start shrink-0 w-[78vw] sm:w-[420px] gallery-item" data-category={p.category}>
+          <WindowFrame src={p.src} alt={p.alt} className="aspect-[4/3]" />
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -53,7 +66,6 @@ const filters = [
 <dialog id="lightbox" class="backdrop:bg-black/85 border-none p-0 max-w-[92vw] max-h-[92vh] bg-[var(--color-aspal)]">
   <div class="relative">
     <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-[92vw] object-contain block" />
-    <p id="lightbox-caption" class="font-['DM_Mono'] text-xs uppercase tracking-[0.15em] text-[var(--color-kertas)] px-4 py-3 text-center"></p>
     <button type="button" id="lightbox-close" aria-label="Tutup galeri" class="absolute -top-3 -right-3 sm:-right-4 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none">×</button>
     <button type="button" id="lightbox-prev" aria-label="Foto sebelumnya" class="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">‹</button>
     <button type="button" id="lightbox-next" aria-label="Foto berikutnya" class="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black">›</button>

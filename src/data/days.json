@@ -10,19 +10,19 @@
     "quote": "Standar operasional berstandar internasional yang menginspirasi mahasiswa Informatika dalam memahami sistem enterprise.",
     "photos": [
       {
-        "src": "/img/day1/01-foto.webp",
-        "alt": "Mahasiswa mengamati langsung robot lengan di lini produksi",
-        "caption": "Lini produksi otomatis yang kami amati tadi"
+        "src": "/img/day1/01.webp",
+        "alt": "Lini produksi pabrik dengan conveyor",
+        "caption": "Lini produksi dan perakitan otomatis"
       },
       {
-        "src": "/img/day1/02-foto.webp",
-        "alt": "Tim 9 berdiskusi bersama petugas pabrik",
-        "caption": "Sesi diskusi bersama tim operasional pabrik"
+        "src": "/img/day1/02.webp",
+        "alt": "Robot industri mengemas produk di lantai pabrik",
+        "caption": "Otomasi pengemasan di lantai produksi"
       },
       {
-        "src": "/img/day1/03-foto.webp",
-        "alt": "Ruang kerja dengan monitor menampilkan data QC",
-        "caption": "Angka-angka QC yang jadi bahan diskusi kami"
+        "src": "/img/day1/03.webp",
+        "alt": "Interior pabrik dengan deretan mesin",
+        "caption": "Suasana ruang mesin dan HSE"
       }
     ]
   },
@@ -37,19 +37,19 @@
     "quote": "Harmoni sempurna antara keagungan alam pegunungan dan kecanggihan panggung multimedia modern.",
     "photos": [
       {
-        "src": "/img/day2/01-foto.webp",
-        "alt": "Pura Ulun Danu Beratan berdiri di atas danau berkabut",
-        "caption": "Pura Ulun Danu Beratan, bukti kami sampai di Bali"
+        "src": "/img/day2/01.webp",
+        "alt": "Pura Ulun Danu Beratan berdiri di atas Danau Beratan",
+        "caption": "Pura Ulun Danu Beratan, Bedugul"
       },
       {
-        "src": "/img/day2/02-foto.webp",
-        "alt": "Detail atap pura dan gerobak di tepi danau",
-        "caption": "Detail kecil di tepi Danau Beratan"
+        "src": "/img/day2/02.webp",
+        "alt": "Pura Ulun Danu Beratan dilihat dari sisi lain",
+        "caption": "Kawasanriteria Danau Beratan yang berkabut"
       },
       {
-        "src": "/img/day2/03-foto.webp",
-        "alt": "Pertunjukan panggung dengan pencahayaan dramatis",
-        "caption": "Kemegahan panggung dan tata cahaya spektakuler"
+        "src": "/img/day2/03.webp",
+        "alt": "Penari Bali membawakan pertunjukan tradisional",
+        "caption": "Devdan Show di Bali Nusa Dua Theatre"
       }
     ]
   },
@@ -64,19 +64,19 @@
     "quote": "Kombinasi antara pengembangan skill digital masa depan dan pelestarian tradisi leluhur yang magis.",
     "photos": [
       {
-        "src": "/img/day3/01-foto.webp",
-        "alt": "Mahasiswa duduk di ruang kelas dengan laptop",
-        "caption": "Sesi pemaparan teknologi digital di BDI Bali"
+        "src": "/img/day3/01.webp",
+        "alt": "Ruang laboratorium komputer untuk pelatihan teknologi",
+        "caption": "Sesi praktik di Balai Diklat Industri Bali"
       },
       {
-        "src": "/img/day3/02-foto.webp",
-        "alt": "Pemandangan sawah berteras di Bali",
-        "caption": "Angin sore di sawah berteras"
+        "src": "/img/day3/02.webp",
+        "alt": "Pantai Kuta saat matahari terbenam",
+        "caption": "Senja di Pantai Kuta"
       },
       {
-        "src": "/img/day3/03-foto.webp",
-        "alt": "Penari Tari Kecak dengan api yang menyala",
-        "caption": "Magisnya kobaran api dan gerak tari Kecak Pandawa"
+        "src": "/img/day3/03.webp",
+        "alt": "Tari Kecak dengan lingkaran api di tengah panggung",
+        "caption": "Tari Kecak Pandawa saat matahari terbenam"
       }
     ]
   },
@@ -91,19 +91,19 @@
     "quote": "Waktu terbaik untuk melepas penat, menikmati sudut otentik Bali, dan mempererat kebersamaan.",
     "photos": [
       {
-        "src": "/img/day4/01-foto.webp",
-        "alt": "Kendaraan dan pasar seni di Bali",
-        "caption": "Menjelajahi sentra kerajinan dan oleh-oleh khas Bali"
+        "src": "/img/day4/01.webp",
+        "alt": "Pasar tradisional Ubud yang ramai",
+        "caption": "Menjelajahi pasar tradisional di Ubud"
       },
       {
-        "src": "/img/day4/02-foto.webp",
-        "alt": "Aneka hidangan lokal tersaji di meja",
-        "caption": "Mencicipi kekayaan kuliner lokal bersama tim"
+        "src": "/img/day4/02.webp",
+        "alt": "Nasi campur sebagai hidangan khas Bali",
+        "caption": "Mencicipi kuliner khas Bali"
       },
       {
-        "src": "/img/day4/03-foto.webp",
-        "alt": "Pasar rakyat dengan barang dagangan segar",
-        "caption": "Momen santai mengitari pasar desa"
+        "src": "/img/day4/03.webp",
+        "alt": "Arsitektur tradisional Bali di Ubud",
+        "caption": "Sudut arsitektur khas Bali"
       }
     ]
   },
@@ -118,19 +118,19 @@
     "quote": "Roda bus berputar membawa kami pulang, namun kenangan dan ilmu di Bali tetap tinggal.",
     "photos": [
       {
-        "src": "/img/day5/01-foto.webp",
-        "alt": "Bus dalam perjalanan malam di jalan tol",
-        "caption": "Perjalanan malam kembali ke kota asal"
+        "src": "/img/day5/01.webp",
+        "alt": "Feri penyeberangan KMP Gilimanuk melintasi Selat Bali",
+        "caption": "Penyeberangan Gilimanuk - Ketapang"
       },
       {
-        "src": "/img/day5/02-foto.webp",
-        "alt": "Jalan raya panjang yang membelah lanskap",
-        "caption": "Menembus kilometer demi kilometer menuju Semarang"
+        "src": "/img/day5/02.webp",
+        "alt": "Jalan tol Mandara di Badung, Bali",
+        "caption": "Menembus jalan tol menuju Semarang"
       },
       {
-        "src": "/img/day5/03-foto.webp",
-        "alt": "Tas ransel dan barang bawaan perjalanan",
-        "caption": "Oleh-oleh dan koper penuh kenangan di bagasi bus"
+        "src": "/img/day5/03.webp",
+        "alt": "Bus perjalanan di jalan pada malam hari",
+        "caption": "Perjalanan malam menuju Semarang"
       }
     ]
   }

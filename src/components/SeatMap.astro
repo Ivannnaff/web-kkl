@@ -87,8 +87,15 @@ const bySeat = new Map(members.map((m) => [m.seat, m]));
         <ul class="divide-y divide-[var(--color-garis)] max-h-[420px] overflow-y-auto">
           {members.map((m) => (
             <li id={`tag-${m.seat}`} class="seat-tag px-5 py-4 flex gap-4 items-start bg-[var(--color-kertas)]">
-              {m.photo && (
+              {m.photo ? (
                 <img src={m.photo} alt={`Foto ${m.fullName}`} loading="lazy" class="w-12 h-12 shrink-0 object-cover border-2 border-[var(--color-tinta)]" />
+              ) : (
+                <span
+                  class="w-12 h-12 shrink-0 grid place-items-center border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)] font-['Archivo'] font-black text-sm"
+                  aria-hidden="true"
+                >
+                  {m.nickname.slice(0, 2).toUpperCase()}
+                </span>
               )}
               <div class="min-w-0">
                 <p class="font-['Archivo'] font-bold leading-tight">{m.nickname}</p>
