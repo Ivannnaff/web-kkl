@@ -31,3 +31,7 @@ pnpm-debug.log*
 
 # Astro cache
 node_modules/.astro/
+
+# Privacy / Photos
+public/img/
+
