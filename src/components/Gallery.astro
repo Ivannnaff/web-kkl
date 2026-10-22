@@ -53,10 +53,11 @@ const counts = categories
       ))}
     </div>
 
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <!-- Mobile: slide horizontal · sm ke atas: grid -->
+    <div class="mt-10 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-8 sm:overflow-visible">
       {photos.map((p, i) => (
         <div
-          class={`gallery-item ${i % 5 === 0 ? "lg:col-span-2" : ""}`}
+          class={`gallery-item shrink-0 w-[84vw] snap-center sm:w-auto sm:shrink ${i % 5 === 0 ? "lg:col-span-2" : ""}`}
           data-category={p.category}
         >
           <WindowFrame
@@ -67,6 +68,10 @@ const counts = categories
         </div>
       ))}
     </div>
+
+    <p class="mt-3 sm:hidden text-center font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+      geser untuk melihat foto lain →
+    </p>
   </div>
 </section>
 
