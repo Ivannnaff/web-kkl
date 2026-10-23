@@ -3,7 +3,7 @@ import "../styles/global.css";
 
 import LedSign from "../components/LedSign.astro";
 import Karcis from "../components/Karcis.astro";
-import PatokKm from "../components/PatokKm.astro";
+
 import Gallery from "../components/Gallery.astro";
 import SeatMap from "../components/SeatMap.astro";
 import VideoVlog from "../components/VideoVlog.astro";
@@ -163,21 +163,14 @@ const members = teamData as Member[];
 
         <div>
           <Day1 data={days[0]} />
-          <PatokKm km={siteData.patok[0].km} note={siteData.patok[0].note} />
 
           <Day2 data={days[1]} />
-          <PatokKm km={siteData.patok[1].km} note={siteData.patok[1].note} />
 
           <Day3 data={days[2]} />
-          <PatokKm km={siteData.patok[2].km} note={siteData.patok[2].note} />
 
           <Day4 data={days[3]} />
-          <PatokKm km={siteData.patok[3].km} note={siteData.patok[3].note} />
 
           <Day5 data={days[4]} />
-          <div class="bg-[var(--color-aspal)] py-6">
-            <PatokKm km={siteData.patok[4].km} note={siteData.patok[4].note} />
-          </div>
         </div>
       </section>
 
@@ -212,13 +205,12 @@ const members = teamData as Member[];
     <!-- Footer -->
     <footer class="bg-[#111] text-[var(--color-kertas)]/60 font-['DM_Mono'] text-xs py-8 px-5 border-t-2 border-[#2A2825]">
       <div class="mx-auto max-w-[1400px] flex flex-wrap items-center justify-between gap-4">
-        <p>© 2026 Tim 9 Informatika · KKL Bali</p>
-        <p>Jejak Dewata — Dibuat dengan Astro &amp; Tailwind</p>
+        <p>© 2026 Kelompok 9 KKL Bali · Informatika UPGRIS</p>
       </div>
       <div class="mx-auto max-w-[1400px] mt-5 pt-5 border-t border-[#2A2825]">
         <details class="group">
           <summary class="cursor-pointer list-none font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.15em] hover:text-[var(--color-kertas)] transition-colors">
-            Kredit Foto & Lisensi
+            Kredit Foto
           </summary>
           <ul class="mt-4 space-y-2 text-[0.7rem] leading-relaxed text-[var(--color-kertas)]/50">
             {credits.map((c) => (
@@ -228,7 +220,6 @@ const members = teamData as Member[];
                 </a>
               </li>
             ))}
-            <li>Foto Unsplash — Tim 9 Informatika</li>
           </ul>
         </details>
       </div>
