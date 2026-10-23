@@ -16,11 +16,9 @@ const { photos } = Astro.props;
 
 const categories = [
   { id: "semua", label: "Semua" },
-  { id: "Industrial", label: "Industrial" },
-  { id: "Culture & Art", label: "Culture & Art" },
-  { id: "Education & Show", label: "Education & Show" },
-  { id: "Exploration", label: "Exploration" },
-  { id: "Return", label: "Return" },
+  { id: "Budaya", label: "Budaya" },
+  { id: "Edukasi", label: "Edukasi" },
+  { id: "Lainnya", label: "Lainnya" },
 ];
 
 const counts = categories
@@ -109,8 +107,7 @@ const counts = categories
 </dialog>
 
 <style>
-  /* Tailwind preflight menghapus margin:auto bawaan <dialog>,
-     jadi kita paksa dialog benar-benar di tengah viewport. */
+  /* Tailwind preflight menghapus margin:auto bawaan <dialog>, jadi kita paksa dialog benar-benar di tengah. */
   dialog#lightbox[open] {
     position: fixed;
     inset: 0;
