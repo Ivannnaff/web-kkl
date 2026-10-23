@@ -20,7 +20,7 @@
   {
     "src": "/img/galeri/galeri4.webp",
     "alt": "Pantai Pandawa dengan tebing karst dan papan nama",
-    "caption": "Pantai Pandawa · Nusa Penida",
+    "caption": "Pantai Pandawa",
     "category": "Exploration"
   },
   {
@@ -43,13 +43,13 @@
   },
   {
     "src": "/img/galeri/galeri8_2_11zon.webp",
-    "alt": "Penyerahan plakat dokumentasi dari pihakveu kepada BDI",
+    "alt": "Penyerahan plakat dokumentasi kepada BDI",
     "caption": "Penyerahan plakat di BDI",
     "category": "Education & Show"
   },
   {
     "src": "/img/galeri/galeri9_3_11zon.webp",
-    "alt": "Fasilitas gedung Referential BDI Bali",
+    "alt": "Fasilitas gedung BDI Bali",
     "caption": "Fasilitas BDI Bali",
     "category": "Education & Show"
   },
@@ -82,5 +82,53 @@
     "alt": "Pencahayaan panggung yang dramatis saat pertunjukan berlangsung",
     "caption": "Suasana panggung",
     "category": "Culture & Art"
+  },
+  {
+    "src": "/img/galeri/galeri15.webp",
+    "alt": "Pemandangan pantai di Bali",
+    "caption": "Eksplorasi Pesisir",
+    "category": "Exploration"
+  },
+  {
+    "src": "/img/galeri/galeri16.webp",
+    "alt": "Tari Kecak di Uluwatu saat senja",
+    "caption": "Tari Kecak Uluwatu",
+    "category": "Culture & Art"
+  },
+  {
+    "src": "/img/galeri/galeri17.webp",
+    "alt": "Bunga bougainvillea mekar di taman",
+    "caption": "Sudut Alam Bali",
+    "category": "Exploration"
+  },
+  {
+    "src": "/img/galeri/galeri18.webp",
+    "alt": "Pura Ulun Danu Beratan dari sudut pandang luas",
+    "caption": "Pura Ulun Danu Beratan",
+    "category": "Culture & Art"
+  },
+  {
+    "src": "/img/galeri/galeri19.webp",
+    "alt": "Tebing batu di Pantai Pandawa",
+    "caption": "Tebing Pandawa",
+    "category": "Exploration"
+  },
+  {
+    "src": "/img/galeri/galeri20.webp",
+    "alt": "Gedung Balai Diklat Industri Bali (BDI)",
+    "caption": "Gedung BDI Bali",
+    "category": "Education & Show"
+  },
+  {
+    "src": "/img/galeri/galeri21.webp",
+    "alt": "Pelabuhan dan kapal ferry di malam hari",
+    "caption": "Pelabuhan Malam",
+    "category": "Return"
+  },
+  {
+    "src": "/img/galeri/galeri22.webp",
+    "alt": "Pintu gerbang masuk Balai Diklat Industri",
+    "caption": "Gerbang BDI Bali",
+    "category": "Education & Show"
   }
 ]
