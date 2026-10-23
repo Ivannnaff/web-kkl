@@ -63,21 +63,6 @@ const [pagi, malam] = data.photos;
           </div>
         </div>
 
-        <!-- Panorama keluar dari tepi -->
-        <div class="overflow-hidden">
-          <figure class="relative mt-10 -mr-5 sm:-mr-16 lg:-mr-32">
-            <img
-              src={data.photos[1]?.src}
-              alt={data.photos[1]?.alt}
-              loading="lazy"
-              class="reveal-tirai w-full aspect-[21/9] object-cover border-y-2 border-[var(--color-tinta)]"
-            />
-            <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)]">
-              {data.photos[1]?.caption}
-            </figcaption>
-          </figure>
-        </div>
-
         <blockquote class="mt-10 border-l-4 border-[var(--color-marka)] pl-5">
           <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug -rotate-1">“{data.quote}”</p>
         </blockquote>
