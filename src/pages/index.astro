@@ -207,22 +207,6 @@ const members = teamData as Member[];
       <div class="mx-auto max-w-[1400px] flex flex-wrap items-center justify-between gap-4">
         <p>© 2026 Kelompok 9 KKL Bali · Informatika UPGRIS</p>
       </div>
-      <div class="mx-auto max-w-[1400px] mt-5 pt-5 border-t border-[#2A2825]">
-        <details class="group">
-          <summary class="cursor-pointer list-none font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.15em] hover:text-[var(--color-kertas)] transition-colors">
-            Kredit Foto
-          </summary>
-          <ul class="mt-4 space-y-2 text-[0.7rem] leading-relaxed text-[var(--color-kertas)]/50">
-            {credits.map((c) => (
-              <li>
-                <a href={c.source} target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-led)] transition-colors">
-                  {c.file} — {c.title.replace(/\.(jpg|jpeg|png)$/i, "")} · {c.author} · {c.license}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </details>
-      </div>
     </footer>
 
     <!-- Lightbox & Interactive Script -->
