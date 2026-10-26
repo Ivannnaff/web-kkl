@@ -41,24 +41,26 @@ const { data } = Astro.props;
         </p>
 
         <!-- Tiga foto kecil ditumpuk seperti ditempel selotip -->
-        <div class="mt-12 flex flex-wrap gap-6 sm:gap-10">
-          {data.photos.map((p, i) => (
-            <figure class={`relative ${
-              i === 0 ? "sm:rotate-[-2deg] sm:-ml-2" : i === 1 ? "sm:rotate-[1.5deg] sm:mt-10" : "sm:rotate-[-1deg] sm:mt-4"
-            }`}>
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-[var(--color-marka)]/70 rotate-[-3deg]"></div>
-              <img
-                src={p.src}
-                alt={p.alt}
-                loading="lazy"
-                class="reveal-tirai w-[200px] sm:w-[240px] h-[240px] sm:h-[280px] object-cover border-4 border-[var(--color-kertas)] shadow-[4px_4px_0_var(--color-tinta)]"
-              />
-              <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)] max-w-[240px]">
-                {p.caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        {data.photos && data.photos.length > 0 && (
+          <div class="mt-12 flex flex-wrap gap-6 sm:gap-10">
+            {data.photos.map((p, i) => (
+              <figure class={`relative ${
+                i === 0 ? "sm:rotate-[-2deg] sm:-ml-2" : i === 1 ? "sm:rotate-[1.5deg] sm:mt-10" : "sm:rotate-[-1deg] sm:mt-4"
+              }`}>
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-[var(--color-marka)]/70 rotate-[-3deg]"></div>
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  class="reveal-tirai w-[200px] sm:w-[240px] h-[240px] sm:h-[280px] object-cover border-4 border-[var(--color-kertas)] shadow-[4px_4px_0_var(--color-tinta)]"
+                />
+                <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)] max-w-[240px]">
+                  {p.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
 
 
       </div>

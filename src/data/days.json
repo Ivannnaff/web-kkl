@@ -8,23 +8,7 @@
     "category": "Industrial",
     "description": "Hari pertama perjalanan dimulai dengan kunjungan edukatif ke fasilitas produksi modern PT. Victoria Care Indonesia di Semarang. Kami mengamati langsung penerapan sistem otomasi lini produksi, manajemen logistik, dan kontrol kualitas berbasis data yang sangat relevan dengan disiplin ilmu Informatika.",
     "quote": "Standar operasional berstandar internasional yang menginspirasi mahasiswa Informatika dalam memahami sistem enterprise.",
-    "photos": [
-      {
-        "src": "/img/day1/01.webp",
-        "alt": "Lini produksi pabrik dengan conveyor",
-        "caption": "Lini produksi dan perakitan otomatis"
-      },
-      {
-        "src": "/img/day1/02.webp",
-        "alt": "Robot industri mengemas produk di lantai pabrik",
-        "caption": "Otomasi pengemasan di lantai produksi"
-      },
-      {
-        "src": "/img/day1/03.webp",
-        "alt": "Interior pabrik dengan deretan mesin",
-        "caption": "Suasana ruang mesin dan HSE"
-      }
-    ]
+    "photos": []
   },
   {
     "id": "hari-2",

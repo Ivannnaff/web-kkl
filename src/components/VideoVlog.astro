@@ -21,103 +21,46 @@ interface Props {
 }
 
 const { vlog } = Astro.props;
-const hasYoutube = Boolean(vlog.youtubeId);
-const hasFile = Boolean(vlog.file);
 ---
 
 <section id="vlog" class="py-24 sm:py-32 bg-[var(--color-aspal)] text-[var(--color-kertas)] scroll-mt-4 border-y-2 border-[#2A2825]">
-  <div class="mx-auto max-w-[1400px] px-5">
-    <div class="grid lg:grid-cols-[1fr_320px] gap-10 lg:gap-14 items-start">
-      <!-- Player -->
-      <div class="min-w-0">
-        <div class="flex flex-wrap items-center gap-4 mb-6">
-          <span class="inline-flex items-center gap-2 font-['Doto'] text-sm text-[var(--color-led)] led-glow">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--color-led)]"></span>
-            {vlog.eyebrow}
-          </span>
-          <span class="font-['DM_Mono'] text-[0.7rem] tracking-[0.18em] text-[var(--color-kertas)]/40">
-            DURASI {vlog.duration}
-          </span>
-        </div>
-
-        <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.92]">
-          {vlog.title}
-        </h2>
-        <p class="mt-4 max-w-xl text-lg text-[var(--color-kertas)]/70 leading-relaxed">{vlog.subtitle}</p>
-
-        <!-- Monitor bus -->
-        <div class="mt-8 rounded-t-[28px] border-[12px] border-[#111] bg-[#111] overflow-hidden relative shadow-[6px_6px_0_var(--color-marka)]">
-          <div class="relative aspect-video bg-[#0A0A09]">
-            <img
-              id="vlog-poster"
-              src={vlog.poster}
-              alt="Poster video vlog perjalanan KKL Bali Tim 9"
-              loading="lazy"
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-            <div
-              id="vlog-mount"
-              class="absolute inset-0"
-              data-youtube={vlog.youtubeId}
-              data-file={vlog.file}
-            ></div>
-            <button
-              type="button"
-              id="vlog-play"
-              class="absolute inset-0 m-auto h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-[var(--color-marka)] border-[3px] border-[var(--color-tinta)] text-[var(--color-tinta)] font-['Archivo'] font-black text-lg sm:text-xl shadow-[4px_4px_0_rgba(0,0,0,.6)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_rgba(0,0,0,.6)] transition-all"
-              aria-label="Putar video vlog"
-            >
-              ▶
-            </button>
-          </div>
-        </div>
-
-        <!-- Chapter -->
-        <ul class="mt-8 border-t-2 border-[var(--color-kertas)]/20">
-          {vlog.chapters.map((c) => (
-            <li>
-              <button
-                type="button"
-                class="vlog-chapter group w-full text-left flex items-center gap-4 py-3 border-b border-[var(--color-kertas)]/12 hover:bg-[var(--color-kertas)]/5 transition-colors"
-                data-jump={c.jump}
-              >
-                <span class="font-['Doto'] text-sm text-[var(--color-led)] group-hover:text-[var(--color-marka)] transition-colors w-14 shrink-0">
-                  {c.time}
-                </span>
-                <span class="font-['DM_Mono'] text-xs uppercase tracking-[0.12em] text-[var(--color-kertas)]/70 group-hover:text-[var(--color-kertas)] transition-colors">
-                  {c.label}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
+  <div class="mx-auto max-w-[1000px] px-5">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 font-['Doto'] text-sm text-[var(--color-led)] led-glow mb-3">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[var(--color-led)]"></span>
+        {vlog.eyebrow}
       </div>
+      <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.92]">
+        {vlog.title}
+      </h2>
+      <p class="mt-4 text-lg text-[var(--color-kertas)]/70 leading-relaxed">{vlog.subtitle}</p>
+    </div>
 
-      <!-- Sider: kapsul video -->
-      <aside class="lg:sticky lg:top-24">
-        <div class="border-2 border-[var(--color-kertas)]/25 p-5">
-          <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-kertas)]/50">
-            Cara memasang video
-          </p>
-          <ol class="mt-4 space-y-3 font-['DM_Mono'] text-xs leading-relaxed text-[var(--color-kertas)]/70">
-            <li><span class="text-[var(--color-led)]">01.</span> Taruh file <span class="text-[var(--color-kertas)]">.mp4</span> di <span class="text-[var(--color-kertas)]">public/video/vlog.mp4</span></li>
-            <li><span class="text-[var(--color-led)]">02.</span> Isi <span class="text-[var(--color-kertas)]">vlog.file</span> di <span class="text-[var(--color-kertas)]">src/data/site.json</span></li>
-            <li><span class="text-[var(--color-led)]">03.</span> Alternatif: isi <span class="text-[var(--color-kertas)]">vlog.youtubeId</span> untuk sematan YouTube</li>
-          </ol>
-        </div>
-
-        <figure class="mt-6 rotate-[-1.5deg]">
-          <img
-            src="/img/ephemera/name-tag-kkl.webp"
-            alt="Name tag peserta KKL Tim 9"
-            loading="lazy"
-            class="w-full border-2 border-[var(--color-kertas)]/20"
-          />
-          <figcaption class="mt-2 font-['Caveat'] text-xl text-[var(--color-kertas)]/60 -rotate-1">
-            name tag asli — jangan dibuang
-          </figcaption>
-        </figure>
-      </aside>
+    <!-- Monitor bus (Clean full width) -->
+    <div class="rounded-t-[32px] border-[14px] border-[#111] bg-[#111] overflow-hidden relative shadow-[8px_8px_0_var(--color-marka)]">
+      <div class="relative aspect-video bg-[#0A0A09]">
+        <img
+          id="vlog-poster"
+          src={vlog.poster}
+          alt="Poster video vlog perjalanan KKL Bali Tim 9"
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          id="vlog-mount"
+          class="absolute inset-0"
+          data-youtube={vlog.youtubeId}
+          data-file={vlog.file}
+        ></div>
+        <button
+          type="button"
+          id="vlog-play"
+          class="absolute inset-0 m-auto h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-[var(--color-marka)] border-[3px] border-[var(--color-tinta)] text-[var(--color-tinta)] font-['Archivo'] font-black text-lg sm:text-xl shadow-[4px_4px_0_rgba(0,0,0,.6)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_rgba(0,0,0,.6)] transition-all"
+          aria-label="Putar video vlog"
+        >
+          ▶
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -173,12 +116,4 @@ const hasFile = Boolean(vlog.file);
   }
 
   playBtn?.addEventListener("click", () => startPlayer(0));
-
-  document.querySelectorAll(".vlog-chapter").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const jump = parseInt(btn.getAttribute("data-jump") || "0", 10);
-      startPlayer(jump);
-      setTimeout(() => player?.seek(jump), 400);
-    });
-  });
 </script>
