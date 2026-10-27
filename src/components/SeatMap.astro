@@ -6,17 +6,6 @@ interface Props {
 }
 
 const { members } = Astro.props;
-
-const rows = [
-  ["1A", "1B"],
-  ["2A", "2B"],
-  ["3A", "3B"],
-  ["4A", "4B"],
-  ["5A", "5B"],
-  ["6A", "6B"],
-  ["7A", "7B"],
-];
-const bySeat = new Map(members.map((m) => [m.seat, m]));
 ---
 
 <section id="tim" class="py-24 sm:py-32 bg-[var(--color-kertas)] scroll-mt-4">
@@ -24,69 +13,20 @@ const bySeat = new Map(members.map((m) => [m.seat, m]));
     <div class="flex flex-wrap items-end justify-between gap-6 border-b-2 border-[var(--color-tinta)] pb-5">
       <div>
         <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)] mb-2">Bagian 05</p>
-        <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.9]">Denah<br />Kursi</h2>
+        <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.9]">Anggota<br />Tim</h2>
       </div>
-      <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">klik kursinya, cari tahu siapa duduk di sebelahmu</p>
+      <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">daftar lengkap anggota kelompok 9 KKL Bali 2026</p>
     </div>
 
-    <div class="mt-12 grid lg:grid-cols-[1fr_320px] gap-12 items-start">
-      <!-- Bus top view -->
-      <div class="relative mx-auto w-full max-w-[560px]">
-        <!-- Bus body -->
-        <div class="relative border-[3px] border-[var(--color-tinta)] rounded-[28px] bg-[var(--color-kertas-2)] p-4 sm:p-6">
-          <!-- Front of bus -->
-          <div class="flex items-center justify-between gap-4 border-b-2 border-dashed border-[var(--color-garis)] pb-4 mb-5">
-            <div class="flex items-center gap-2">
-              <span class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] bg-[var(--color-tinta)] text-[var(--color-kertas)] px-2 py-1">Sopir</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] border border-[var(--color-tinta)] px-2 py-1">Pintu</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:gap-x-10 sm:gap-y-4">
-            {rows.flatMap((pair) =>
-              pair.map((seat) => {
-                const m = bySeat.get(seat);
-                const isDosen = m?.role === "Dosen Pembimbing";
-                return (
-                  <button
-                    type="button"
-                    data-seat={seat}
-                    class={`seat group relative text-left px-3 py-2.5 sm:px-4 sm:py-3 border-2 transition-all ${
-                      isDosen
-                        ? "border-[var(--color-marka)] bg-[var(--color-tinta)] text-[var(--color-kertas)]"
-                        : "border-[var(--color-tinta)] bg-[var(--color-kertas)] text-[var(--color-tinta)] hover:bg-[var(--color-marka)]"
-                    }`}
-                    aria-describedby={m ? `tag-${seat}` : undefined}
-                  >
-                    <span class="font-['DM_Mono'] text-[0.65rem] tracking-[0.15em] opacity-70 block">{seat}</span>
-                    <span class="font-['Archivo'] font-bold text-sm sm:text-base leading-tight block truncate">{m ? m.nickname : "—"}</span>
-                    {m && <span class="font-['DM_Mono'] text-[0.6rem] opacity-60 block">{m.class}</span>}
-                    {isDosen && <span class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--color-marka)] border border-[var(--color-tinta)]"></span>}
-                  </button>
-                );
-              }),
-            )}
-          </div>
-
-          <!-- Rear -->
-          <div class="mt-6 pt-4 border-t-2 border-dashed border-[var(--color-garis)] text-center font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
-            ◀ Belakang Bus
-          </div>
-        </div>
-        <p class="mt-3 text-center font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">Bermotor · Negeri · 2–2</p>
-      </div>
-
-      <!-- Seat tag panel -->
-      <aside class="lg:sticky lg:top-8 border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)]">
+    <div class="mt-12 max-w-3xl mx-auto">
+      <div class="border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)]">
         <div class="px-5 py-3 border-b-2 border-[var(--color-tinta)] flex items-center justify-between">
-          <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em]">Kartu Penumpang</p>
-          <span id="seat-count" class="font-['DM_Mono'] text-[0.7rem] opacity-60">{members.length} ORANG</span>
+          <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em]">Manifest Anggota Tim</p>
+          <span class="font-['DM_Mono'] text-[0.7rem] opacity-60">{members.length} ORANG</span>
         </div>
-        <ul class="divide-y divide-[var(--color-garis)] max-h-[420px] overflow-y-auto">
+        <ul class="divide-y divide-[var(--color-garis)] max-h-[520px] overflow-y-auto">
           {members.map((m) => (
-            <li id={`tag-${m.seat}`} class="seat-tag px-5 py-4 flex gap-4 items-start bg-[var(--color-kertas)]">
+            <li class="px-5 py-4 flex gap-4 items-start bg-[var(--color-kertas)]">
               {m.photo ? (
                 <img src={m.photo} alt={`Foto ${m.fullName}`} loading="lazy" class="w-12 h-12 shrink-0 object-cover border-2 border-[var(--color-tinta)]" />
               ) : (
@@ -100,23 +40,14 @@ const bySeat = new Map(members.map((m) => [m.seat, m]));
               <div class="min-w-0">
                 <p class="font-['Archivo'] font-bold leading-tight">{m.nickname}</p>
                 <p class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)]">
-                  {m.seat} · {m.class} · {m.role}
+                  {m.class} · {m.role}
                 </p>
                 <p class="text-sm mt-1 leading-snug">{m.fullName}</p>
               </div>
             </li>
           ))}
         </ul>
-      </aside>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .seat-tag {
-    transition: background-color 0.25s ease;
-  }
-  .seat-tag.is-active {
-    background-color: var(--color-marka);
-  }
-</style>

@@ -378,19 +378,7 @@ const members = teamData as Member[];
         }
       });
 
-      // Seat Map interactive highlight
-      const seats = document.querySelectorAll(".seat");
-      seats.forEach((seatBtn) => {
-        seatBtn.addEventListener("click", () => {
-          const seatNo = seatBtn.getAttribute("data-seat");
-          document.querySelectorAll(".seat-tag").forEach((t) => t.classList.remove("is-active"));
-          const tag = document.getElementById(`tag-${seatNo}`);
-          if (tag) {
-            tag.classList.add("is-active");
-            tag.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          }
-        });
-      });
+
     </script>
   </body>
 </html>
