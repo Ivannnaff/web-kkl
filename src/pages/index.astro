@@ -62,7 +62,7 @@ const members = teamData as Member[];
     <main id="hero">
       <!-- 6.1 Hero — Papan Tujuan -->
       <section class="bg-[var(--color-aspal)] text-[var(--color-kertas)] min-h-[calc(100vh-4rem)] flex flex-col justify-between relative overflow-hidden">
-        <LedSign text={siteData.route} />
+
 
         <div class="mx-auto max-w-[1400px] px-5 py-12 sm:py-20 w-full grid lg:grid-cols-12 gap-10 items-center">
           <!-- Kolom Kiri: Judul & Karcis -->
@@ -222,16 +222,16 @@ const members = teamData as Member[];
         const railWrap = document.querySelector("#rail-wrap");
         const ruteSec = document.querySelector("#rute");
         if (railWrap && ruteSec) {
-          gsap.to("#bus", {
-            y: () => ruteSec.offsetHeight - 120,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ruteSec,
-              start: "top top",
-              end: "bottom bottom",
-              scrub: true,
-            },
-          });
+              gsap.to("#bus", {
+                y: () => ruteSec.offsetHeight - 120,
+                ease: "power1.out",
+                scrollTrigger: {
+                  trigger: ruteSec,
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: 1.2,
+                },
+              });
         }
 
         // Rambu dipasang
