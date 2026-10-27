@@ -218,20 +218,29 @@ const members = teamData as Member[];
       // GSAP Animations
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Bus di rel mengikuti scroll di section #rute
-        const railWrap = document.querySelector("#rail-wrap");
+        // Bus di rel mengikuti posisi tiap hari (Day 1 sampai Day 5) secara akurat
         const ruteSec = document.querySelector("#rute");
-        if (railWrap && ruteSec) {
-              gsap.to("#bus", {
-                y: () => ruteSec.offsetHeight - 120,
-                ease: "power1.out",
-                scrollTrigger: {
-                  trigger: ruteSec,
-                  start: "top top",
-                  end: "bottom bottom",
-                  scrub: 1.2,
-                },
-              });
+        const daysEls = document.querySelectorAll(".day-section");
+        const bus = document.querySelector("#bus");
+        if (ruteSec && daysEls.length > 0 && bus) {
+          const positions = Array.from(daysEls).map((el: any) => {
+            const rambu = el.querySelector(".rambu");
+            return rambu ? rambu.offsetTop : el.offsetTop;
+          });
+          const maxDistance = ruteSec.offsetHeight - 120;
+
+          gsap.to("#bus", {
+            keyframes: positions.map((pos) => ({
+              y: Math.min(pos, maxDistance),
+              easing: "power1.inOut",
+            })),
+            scrollTrigger: {
+              trigger: ruteSec,
+              start: "top top+=100px",
+              end: "bottom bottom-=100px",
+              scrub: 1.2,
+            },
+          });
         }
 
         // Rambu dipasang
