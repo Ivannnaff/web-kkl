@@ -45,7 +45,7 @@ const members = teamData as Member[];
 
     <!-- Navigasi Minimal -->
     <header class="sticky top-0 z-40 bg-[var(--color-kertas)]/90 backdrop-blur-md border-b-2 border-[var(--color-tinta)]">
-      <div class="mx-auto max-w-[1400px] px-5 h-16 flex items-center justify-between">
+      <div class="mx-auto max-w-[1400px] px-8 lg:px-16 h-16 flex items-center justify-between">
         <a href="#hero" class="font-['Archivo'] font-black uppercase tracking-tighter text-lg sm:text-xl">
           JEJAK DEWATA <span class="text-[var(--color-marka)] bg-[var(--color-tinta)] px-1.5 py-0.5 text-xs">TIM 9</span>
         </a>
@@ -64,7 +64,7 @@ const members = teamData as Member[];
       <section class="bg-[var(--color-aspal)] text-[var(--color-kertas)] min-h-[calc(100vh-4rem)] flex flex-col justify-between relative overflow-hidden">
 
 
-        <div class="mx-auto max-w-[1400px] px-5 py-12 sm:py-20 w-full grid lg:grid-cols-12 gap-10 items-center">
+        <div class="mx-auto max-w-[1400px] px-8 lg:px-16 py-16 sm:py-28 w-full grid lg:grid-cols-12 gap-10 items-center">
           <!-- Kolom Kiri: Judul & Karcis -->
           <div class="lg:col-span-7 z-10">
             <p class="font-['DM_Mono'] text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--color-led)] mb-3">
@@ -119,8 +119,8 @@ const members = teamData as Member[];
       </section>
 
       <!-- 6.2 Manifest -->
-      <section id="manifest" class="py-24 sm:py-32 bg-[var(--color-kertas)] border-b-2 border-[var(--color-garis)] scroll-mt-4">
-        <div class="mx-auto max-w-[1000px] px-5 text-center">
+      <section id="manifest" class="py-32 sm:py-40 bg-[var(--color-kertas)] border-b-2 border-[var(--color-garis)] scroll-mt-4">
+        <div class="mx-auto max-w-[1000px] px-8 text-center">
           <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)] mb-4">Manifest Perjalanan</p>
           <blockquote class="font-['Archivo'] font-black text-3xl sm:text-6xl tracking-tight leading-[1.1] text-[var(--color-tinta)]">
             {siteData.manifest}
@@ -184,8 +184,8 @@ const members = teamData as Member[];
       <SeatMap members={members} />
 
       <!-- 6.6 Penutup — Turun di Terminal -->
-      <section class="py-24 sm:py-36 bg-[var(--color-aspal)] text-[var(--color-kertas)] text-center relative overflow-hidden">
-        <div class="mx-auto max-w-[900px] px-5 relative z-10">
+      <section class="py-32 sm:py-44 bg-[var(--color-aspal)] text-[var(--color-kertas)] text-center relative overflow-hidden">
+        <div class="mx-auto max-w-[900px] px-8 relative z-10">
           <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-led)] mb-4">Terminal Akhir</p>
           <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-7xl leading-[0.95]">
             {siteData.closing.title}
@@ -203,7 +203,7 @@ const members = teamData as Member[];
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#111] text-[var(--color-kertas)]/60 font-['DM_Mono'] text-xs py-8 px-5 border-t-2 border-[#2A2825]">
+    <footer class="bg-[#111] text-[var(--color-kertas)]/60 font-['DM_Mono'] text-xs py-10 px-8 lg:px-16 border-t-2 border-[#2A2825]">
       <div class="mx-auto max-w-[1400px] flex flex-wrap items-center justify-between gap-4">
         <p>© 2026 Kelompok 9 KKL Bali · Informatika UPGRIS</p>
       </div>
