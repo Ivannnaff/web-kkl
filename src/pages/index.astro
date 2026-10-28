@@ -218,41 +218,54 @@ const members = teamData as Member[];
       // GSAP Animations
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Bus di rel mengikuti posisi tiap hari (Day 1 sampai Day 5) secara akurat
+        // Bus di rel mengikuti posisi tiap hari (Day 1 sampai Day 5) secara presisi
         const ruteSec = document.querySelector("#rute");
         const daysEls = document.querySelectorAll(".day-section");
         const bus = document.querySelector("#bus");
         if (ruteSec && daysEls.length > 0 && bus) {
-          const positions = Array.from(daysEls).map((el: any) => {
-            const rambu = el.querySelector(".rambu");
-            return rambu ? rambu.offsetTop : el.offsetTop;
-          });
-          const maxDistance = ruteSec.offsetHeight - 120;
-
+          const step = (ruteSec.offsetHeight - 120) / (daysEls.length - 1);
           gsap.to("#bus", {
-            keyframes: positions.map((pos) => ({
-              y: Math.min(pos, maxDistance),
-              easing: "power1.inOut",
-            })),
+            y: (i, target) => {
+              return (ruteSec.offsetHeight - 120);
+            },
+            ease: "none",
             scrollTrigger: {
               trigger: ruteSec,
-              start: "top top+=100px",
-              end: "bottom bottom-=100px",
-              scrub: 1.2,
+              start: "top top+=120px",
+              end: "bottom bottom-=120px",
+              scrub: 1.5,
             },
+          });
+
+          // Menggunakan timeline per day section agar bus pas di setiap rambu hari
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: ruteSec,
+              start: "top top+=120px",
+              end: "bottom bottom-=120px",
+              scrub: true,
+            }
+          });
+
+          daysEls.forEach((dayEl, index) => {
+            const targetY = index * ( (ruteSec.offsetHeight - 120) / (daysEls.length - 1) );
+            tl.to("#bus", { y: targetY, ease: "power1.inOut" }, index);
           });
         }
 
-        // Rambu dipasang
-        gsap.utils.toArray(".rambu").forEach((el: any) =>
-          gsap.from(el, {
-            yPercent: -100,
-            rotate: -3,
-            duration: 0.6,
-            ease: "back.out(1.5)",
-            scrollTrigger: { trigger: el, start: "top 85%", once: true },
-          }),
-        );
+        // Efek floating pada rambu sticky
+        gsap.utils.toArray(".sticky-rambu").forEach((el: any) => {
+          gsap.to(el, {
+            y: 40,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el.parentElement?.parentElement,
+              start: "top top+=120px",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        });
 
         // Foto tirai
         gsap.utils.toArray(".reveal-tirai").forEach((el: any) =>
