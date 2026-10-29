@@ -39,18 +39,20 @@ const potong = [
         <p class="mt-6 max-w-2xl text-[1.05rem] leading-[1.65]">{data.description}</p>
 
         <!-- Tiga potongan tinggi tak sama: SIANG → SORE → SENJA -->
-        <div class="mt-12 grid sm:grid-cols-3 gap-4 items-end">
+        <div class="mt-12 grid sm:grid-cols-3 gap-6 items-stretch">
           {potong.map((p, i) => {
             const photo = data.photos[i];
             const isDark = i === 2;
             return (
-              <article class={`${p.h} ${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-end relative overflow-hidden`}>
-                <span class="font-['Archivo'] font-black text-2xl sm:text-3xl tracking-tighter leading-none">
-                  {p.label}
-                </span>
-                <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] ${isDark ? "text-[var(--color-kertas)]/60" : "text-[var(--color-tinta-soft)]"}`}>
-                  {p.sub}
-                </span>
+              <article class={`${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-between relative overflow-hidden`}>
+                <div>
+                  <span class="font-['Archivo'] font-black text-2xl sm:text-3xl tracking-tighter leading-none block">
+                    {p.label}
+                  </span>
+                  <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] block mt-1 ${isDark ? "text-[var(--color-kertas)]/60" : "text-[var(--color-tinta-soft)]"}`}>
+                    {p.sub}
+                  </span>
+                </div>
                 {photo && (
                   <img
                     src={photo.src}
