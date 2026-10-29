@@ -51,24 +51,60 @@ const counts = categories
       ))}
     </div>
 
-    <!-- Mobile: horizontal scroll · Desktop: compact grid -->
-    <div class="mt-10 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:pb-0 sm:grid sm:grid-cols-3 lg:grid-cols-4 sm:gap-6 sm:overflow-visible">
+    <!-- Mobile & Desktop Grid/Slideshow View -->
+    <div class="mt-10 hidden sm:grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 auto-rows-[220px]">
       {photos.map((p, i) => (
         <div
-          class="gallery-item shrink-0 w-[78vw] snap-center sm:w-auto sm:shrink"
+          class={`gallery-item group relative overflow-hidden rounded-[20px] border-2 border-[var(--color-tinta)] bg-[#111] cursor-pointer 
+            ${i % 6 === 0 ? "col-span-2 row-span-2" : i % 6 === 3 ? "col-span-2" : "col-span-1"}`}
           data-category={p.category}
         >
-          <WindowFrame
+          <img
             src={p.src}
             alt={p.alt}
-            className="aspect-[4/3]"
+            loading="lazy"
+            class="gallery-trigger absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            data-caption={p.caption || p.alt}
           />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <div class="absolute bottom-0 inset-x-0 p-5 text-[var(--color-kertas)] flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span class="font-['DM_Mono'] text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-marka)] mb-1">
+                {p.category}
+              </span>
+              <p class="font-['Archivo'] font-bold text-sm leading-tight drop-shadow-md">
+                {p.caption || p.alt}
+              </p>
+            </div>
+          </div>
         </div>
       ))}
     </div>
 
-    <p class="mt-3 sm:hidden text-center font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
-      geser untuk melihat foto lain →
+    <!-- Mobile Slideshow Container (Tampilan alternatif yang hemat tempat) -->
+    <div class="sm:hidden mt-8 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {photos.map((p) => (
+        <div class="gallery-item shrink-0 w-[82vw] snap-center rounded-[20px] border-2 border-[var(--color-tinta)] bg-[#111] overflow-hidden aspect-[4/3] relative">
+           <img
+             src={p.src}
+             alt={p.alt}
+             loading="lazy"
+             class="gallery-trigger w-full h-full object-cover"
+             data-caption={p.caption || p.alt}
+           />
+           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 p-3 text-[var(--color-kertas)] pointer-events-none">
+             <span class="font-['DM_Mono'] text-[0.55rem] uppercase tracking-[0.15em] text-[var(--color-marka)] block">
+               {p.category}
+             </span>
+             <p class="font-['Archivo'] font-bold text-xs truncate">
+               {p.caption || p.alt}
+             </p>
+           </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-4 text-center font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+      arahkan kursor atau sentuh foto untuk melihat lebih jelas
     </p>
   </div>
 </section>
