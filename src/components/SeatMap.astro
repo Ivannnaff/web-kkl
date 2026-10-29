@@ -6,6 +6,9 @@ interface Props {
 }
 
 const { members } = Astro.props;
+
+const dosens = members.filter((m) => m.role === "Dosen Pembimbing" || m.class === "Dosen");
+const students = members.filter((m) => m.role !== "Dosen Pembimbing" && m.class !== "Dosen");
 ---
 
 <section id="tim" class="py-32 sm:py-40 bg-[var(--color-kertas)] scroll-mt-4">
@@ -15,17 +18,51 @@ const { members } = Astro.props;
         <p class="font-['DM_Mono'] text-xs uppercase tracking-[0.2em] text-[var(--color-tinta-soft)] mb-2">Bagian 05</p>
         <h2 class="font-['Archivo'] font-black uppercase tracking-tight text-4xl sm:text-6xl leading-[0.9]">Anggota<br />Tim</h2>
       </div>
-      <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">daftar lengkap anggota kelompok 9 KKL Bali 2026</p>
+      <p class="font-['Caveat'] text-2xl -rotate-2 max-w-xs text-[var(--color-tinta-soft)]">daftar lengkap dosen pembimbing dan anggota kelompok 9 KKL Bali 2026</p>
     </div>
 
-    <div class="mt-12 max-w-3xl mx-auto">
+    <div class="mt-12 max-w-3xl mx-auto space-y-8">
+      <!-- Card Dosen Pembimbing -->
+      {dosens.length > 0 && (
+        <div class="border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)]">
+          <div class="px-5 py-3 border-b-2 border-[var(--color-tinta)] flex items-center justify-between bg-[var(--color-marka)]">
+            <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em] font-bold text-[var(--color-tinta)]">Dosen Pembimbing</p>
+            <span class="font-['DM_Mono'] text-[0.7rem] font-bold text-[var(--color-tinta)]">DOSEN</span>
+          </div>
+          <ul class="divide-y divide-[var(--color-garis)]">
+            {dosens.map((m) => (
+              <li class="px-5 py-4 flex gap-4 items-start bg-[var(--color-kertas)]">
+                {m.photo ? (
+                  <img src={m.photo} alt={`Foto ${m.fullName}`} loading="lazy" class="w-12 h-12 shrink-0 object-cover border-2 border-[var(--color-tinta)]" />
+                ) : (
+                  <span
+                    class="w-12 h-12 shrink-0 grid place-items-center border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)] font-['Archivo'] font-black text-sm"
+                    aria-hidden="true"
+                  >
+                    {m.nickname.slice(0, 2).toUpperCase()}
+                  </span>
+                )}
+                <div class="min-w-0">
+                  <p class="font-['Archivo'] font-bold leading-tight">{m.nickname}</p>
+                  <p class="font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)]">
+                    {m.role}
+                  </p>
+                  <p class="text-sm mt-1 leading-snug">{m.fullName}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <!-- Card Mahasiswa / Anggota Tim -->
       <div class="border-2 border-[var(--color-tinta)] bg-[var(--color-kertas-2)]">
         <div class="px-5 py-3 border-b-2 border-[var(--color-tinta)] flex items-center justify-between">
-          <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em]">Manifest Anggota Tim</p>
-          <span class="font-['DM_Mono'] text-[0.7rem] opacity-60">{members.length} ORANG</span>
+          <p class="font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.18em]">Manifest Mahasiswa</p>
+          <span class="font-['DM_Mono'] text-[0.7rem] opacity-60">{students.length} ORANG</span>
         </div>
         <ul class="divide-y divide-[var(--color-garis)] max-h-[520px] overflow-y-auto">
-          {members.map((m) => (
+          {students.map((m) => (
             <li class="px-5 py-4 flex gap-4 items-start bg-[var(--color-kertas)]">
               {m.photo ? (
                 <img src={m.photo} alt={`Foto ${m.fullName}`} loading="lazy" class="w-12 h-12 shrink-0 object-cover border-2 border-[var(--color-tinta)]" />
