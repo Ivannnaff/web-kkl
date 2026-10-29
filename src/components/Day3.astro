@@ -44,12 +44,12 @@ const potong = [
             const photo = data.photos[i];
             const isDark = i === 2;
             return (
-              <article class={`${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-between relative overflow-hidden`}>
+                <article class={`${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-between relative overflow-hidden ${isDark ? 'text-[var(--color-kertas)]' : ''}`}>
                 <div>
                   <span class="font-['Archivo'] font-black text-2xl sm:text-3xl tracking-tighter leading-none block">
                     {p.label}
                   </span>
-                  <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] block mt-1 ${isDark ? "text-[var(--color-kertas)]/60" : "text-[var(--color-tinta-soft)]"}`}>
+                  <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] block mt-1 ${isDark ? "text-[var(--color-kertas)]" : "text-[var(--color-tinta-soft)]"}`}>
                     {p.sub}
                   </span>
                 </div>
