@@ -97,19 +97,16 @@ const members = teamData as Member[];
             </div>
           </div>
 
-          <!-- Kolom Kanan: Foto Bingkai Kaca Depan -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative rounded-t-[36px] border-[14px] border-[#111] bg-[#111] overflow-hidden shadow-2xl rotate-1 sm:rotate-2">
-              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent pointer-events-none z-10"></div>
+          <!-- Kolom Kanan: Foto Hero -->
+          <div class="lg:col-span-5 relative h-full min-h-[360px] sm:min-h-[460px] flex">
+            <div class="relative w-full h-full rounded-2xl border-2 border-[var(--color-tinta)] bg-[#111] overflow-hidden shadow-2xl">
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none z-10"></div>
               <img
-                src="/img/hero/bus-kaca-depan.webp"
-                alt="Pemandangan dari kaca depan bus Tim 9"
-                class="w-full aspect-[4/5] object-cover"
+                src="/img/hero/hero.jpg"
+                alt="Foto Hero Perjalanan KKL Bali Tim 9"
+                class="w-full h-full object-cover object-[center_65%] scale-105"
                 fetchpriority="high"
               />
-              <div class="absolute bottom-0 inset-x-0 bg-[#111]/90 backdrop-blur-sm p-4 text-center font-['DM_Mono'] text-xs tracking-widest text-[var(--color-led)]">
-                ● LIVE DASHBOARD · BUS TIM 9
-              </div>
             </div>
           </div>
         </div>
