@@ -8,7 +8,18 @@
     "category": "Industrial",
     "description": "Hari pertama perjalanan dimulai dengan kunjungan edukatif ke fasilitas produksi modern PT. Victoria Care Indonesia di Semarang. Kami mengamati langsung penerapan sistem otomasi lini produksi, manajemen logistik, dan kontrol kualitas berbasis data yang sangat relevan dengan disiplin ilmu Informatika.",
     "quote": "Standar operasional berstandar internasional yang menginspirasi mahasiswa Informatika dalam memahami sistem enterprise.",
-    "photos": []
+    "photos": [
+      {
+        "src": "/img/day1/01.webp",
+        "alt": "Suasana kunjungan industri di PT. Victoria Care Indonesia",
+        "caption": "Fasilitas Produksi PT. Victoria Care Indonesia"
+      },
+      {
+        "src": "/img/day1/02.webp",
+        "alt": "Kegiatan mahasiswa saat kunjungan",
+        "caption": "Sesi penjelasan dan observasi pabrik"
+      }
+    ]
   },
   {
     "id": "hari-2",
@@ -21,13 +32,13 @@
     "quote": "Harmoni sempurna antara keagungan alam pegunungan dan kecanggihan panggung multimedia modern.",
     "photos": [
       {
-        "src": "/img/day2/01.webp",
-        "alt": "Pura Ulun Danu Beratan berdiri di atas Danau Beratan",
+        "src": "/img/galeri/galeri2_4_11zon.webp",
+        "alt": "Pura Ulun Danu Beratan berdiri di atas Danau Beratan yang berkabut",
         "caption": "Pura Ulun Danu Beratan, Bedugul"
       },
       {
-        "src": "/img/day2/03.webp",
-        "alt": "Penari Bali membawakan pertunjukan tradisional",
+        "src": "/img/galeri/galeri12.webp",
+        "alt": "Pertunjukan Devdan Show di Bali Nusa Dua Theatre",
         "caption": "Devdan Show di Bali Nusa Dua Theatre"
       }
     ]
@@ -36,26 +47,31 @@
     "id": "hari-3",
     "day": 3,
     "date": "20 Agustus 2026",
-    "title": "Balai Diklat Industri Bali, Pantai Kuta & Tari Kecak",
+    "title": "Balai Diklat Industri Bali, Pantai Kuta, Tari Kecak & Makrab",
     "location": "Denpasar & Kuta",
     "category": "Education & Show",
-    "description": "Kunjungan pagi ke Balai Diklat Industri Bali memberikan wawasan mendalam tentang inkubasi talenta digital dan animasi. Sore harinya, kami menikmati panorama matahari terbenam di Pantai Kuta sebelum ditutup dengan magisnya pementasan Tari Kecak Pandawa.",
-    "quote": "Kombinasi antara pengembangan skill digital masa depan dan pelestarian tradisi leluhur yang magis.",
+    "description": "Kunjungan pagi ke Balai Diklat Industri Bali memberikan wawasan mendalam tentang inkubasi talenta digital. Sore harinya menikmati panorama matahari terbenam di Pantai Kuta, ditutup dengan magisnya pementasan Tari Kecak dan acara malam kebersamaan (makrab).",
+    "quote": "Kombinasi antara pengembangan skill digital masa depan, pelestarian tradisi leluhur, dan kehangatan malam kebersamaan.",
     "photos": [
       {
-        "src": "/img/day3/01.webp",
-        "alt": "Ruang laboratorium komputer untuk pelatihan teknologi",
-        "caption": "Sesi praktik di Balai Diklat Industri Bali"
+        "src": "/img/galeri/galeri11.webp",
+        "alt": "Foto bersama Tim 9 di depan gedung BDI Bali",
+        "caption": "Foto bersama di Balai Diklat Industri Bali"
       },
       {
-        "src": "/img/day3/02.webp",
-        "alt": "Pantai Kuta saat matahari terbenam",
+        "src": "/img/galeri/galeri15.webp",
+        "alt": "Eksplorasi Pesisir di Bali",
         "caption": "Senja di Pantai Kuta"
       },
       {
-        "src": "/img/day3/03.webp",
-        "alt": "Tari Kecak dengan lingkaran api di tengah panggung",
-        "caption": "Tari Kecak Pandawa saat matahari terbenam"
+        "src": "/img/galeri/galeri16.webp",
+        "alt": "Tari Kecak Uluwatu saat senja",
+        "caption": "Tari Kecak Pandawa"
+      },
+      {
+        "src": "/img/galeri/makrab.webp",
+        "alt": "Suasana malam kebersamaan dan makrab",
+        "caption": "Malam Kebersamaan (Makrab)"
       }
     ]
   },
@@ -70,19 +86,19 @@
     "quote": "Waktu terbaik untuk melepas penat, menikmati sudut otentik Bali, dan mempererat kebersamaan.",
     "photos": [
       {
-        "src": "/img/day4/01.webp",
-        "alt": "Pasar tradisional Ubud yang ramai",
-        "caption": "Menjelajahi pasar tradisional di Ubud"
+        "src": "/img/galeri/galeri4.webp",
+        "alt": "Pantai Pandawa",
+        "caption": "Pantai Pandawa"
       },
       {
-        "src": "/img/day4/02.webp",
-        "alt": "Nasi campur sebagai hidangan khas Bali",
-        "caption": "Mencicipi kuliner khas Bali"
+        "src": "/img/galeri/galeri19.webp",
+        "alt": "Tebing Pandawa",
+        "caption": "Tebing Pandawa"
       },
       {
-        "src": "/img/day4/03.webp",
-        "alt": "Arsitektur tradisional Bali di Ubud",
-        "caption": "Sudut arsitektur khas Bali"
+        "src": "/img/galeri/galeri17.webp",
+        "alt": "Sudut Alam Bali",
+        "caption": "Sudut Alam Bali"
       }
     ]
   },

@@ -9,9 +9,10 @@ interface Props {
 const { data } = Astro.props;
 
 const potong = [
-  { label: "SIANG", sub: "Balai Diklat Industri", h: "h-[46%]", bg: "bg-[var(--color-kertas)]" },
-  { label: "SORE", sub: "Pantai Kuta", h: "h-[68%]", bg: "bg-[#B9B3A8]" },
-  { label: "SENJA", sub: "Tari Kecak Pandawa", h: "h-[92%]", bg: "bg-[var(--color-aspal)]" },
+  { label: "SIANG", sub: "Balai Diklat Industri", bg: "bg-[var(--color-kertas)]" },
+  { label: "SORE", sub: "Pantai Kuta", bg: "bg-[#B9B3A8]" },
+  { label: "SENJA", sub: "Tari Kecak", bg: "bg-[var(--color-aspal)]" },
+  { label: "MALAM", sub: "Makrab", bg: "bg-[var(--color-tinta)] text-[var(--color-kertas)]" },
 ];
 ---
 
@@ -38,18 +39,18 @@ const potong = [
         </h3>
         <p class="mt-6 max-w-2xl text-[1.05rem] leading-[1.65]">{data.description}</p>
 
-        <!-- Tiga potongan tinggi tak sama: SIANG → SORE → SENJA -->
-        <div class="mt-12 grid sm:grid-cols-3 gap-6 items-stretch">
+        <!-- Empat potongan: SIANG → SORE → SENJA → MALAM -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {potong.map((p, i) => {
             const photo = data.photos[i];
-            const isDark = i === 2;
+            const isDark = i === 2 || i === 3;
             return (
-                <article class={`${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-between relative overflow-hidden ${isDark ? 'text-[var(--color-kertas)]' : ''}`}>
+                <article class={`${p.bg} border-2 border-[var(--color-tinta)] p-4 flex flex-col justify-between relative overflow-hidden ${isDark && i !== 3 ? 'text-[var(--color-kertas)]' : ''}`}>
                 <div>
                   <span class="font-['Archivo'] font-black text-2xl sm:text-3xl tracking-tighter leading-none block">
                     {p.label}
                   </span>
-                  <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] block mt-1 ${isDark ? "text-[var(--color-kertas)]" : "text-[var(--color-tinta-soft)]"}`}>
+                  <span class={`font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.15em] block mt-1 ${isDark ? "text-[var(--color-kertas)]/80" : "text-[var(--color-tinta-soft)]"}`}>
                     {p.sub}
                   </span>
                 </div>
