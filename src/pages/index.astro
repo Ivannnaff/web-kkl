@@ -372,13 +372,15 @@ const members = teamData as Member[];
       });
 
       closeBtn?.addEventListener("click", () => dialog?.close());
-      document.getElementById("lightbox-prev")?.addEventListener("click", () => {
+      document.getElementById("lightbox-prev")?.addEventListener("click", (e) => {
+        e.stopPropagation();
         currentList = getActiveTriggers();
         if (currentList.length === 0) return;
         currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
         updateLightboxImage();
       });
-      document.getElementById("lightbox-next")?.addEventListener("click", () => {
+      document.getElementById("lightbox-next")?.addEventListener("click", (e) => {
+        e.stopPropagation();
         currentList = getActiveTriggers();
         if (currentList.length === 0) return;
         currentIndex = (currentIndex + 1) % currentList.length;

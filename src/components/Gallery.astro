@@ -92,32 +92,32 @@ const counts = categories
 <dialog
   id="lightbox"
   aria-label="Pratinjau foto galeri"
-  class="m-auto p-0 border-0 bg-transparent max-w-[96vw] max-h-[96vh] overflow-visible backdrop:bg-black/90"
+  class="m-0 p-0 border-0 bg-transparent w-full h-full max-w-none max-h-none overflow-hidden backdrop:bg-black/90"
 >
-  <div class="relative flex items-center justify-center">
+  <div class="relative w-full h-full flex items-center justify-center pointer-events-auto">
     <img
       id="lightbox-img"
       src=""
       alt=""
-      class="block max-h-[82vh] max-w-[86vw] object-contain border-2 border-[var(--color-kertas)]/20 bg-[var(--color-aspal)] shadow-[0_20px_60px_rgba(0,0,0,.7)]"
+      class="max-h-[85vh] max-w-[85vw] object-contain border-2 border-[var(--color-kertas)]/20 bg-[var(--color-aspal)] shadow-[0_20px_60px_rgba(0,0,0,.7)]"
     />
     <button
       type="button"
       id="lightbox-close"
       aria-label="Tutup galeri"
-      class="absolute -top-4 -right-4 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none shadow-[3px_3px_0_var(--color-tinta)]"
+      class="fixed top-8 right-8 w-12 h-12 bg-[var(--color-marka)] text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none shadow-[3px_3px_0_var(--color-tinta)] z-[100] cursor-pointer"
     >×</button>
     <button
       type="button"
       id="lightbox-prev"
       aria-label="Foto sebelumnya"
-      class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none"
+      class="fixed left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none z-[100] cursor-pointer"
     >‹</button>
     <button
       type="button"
       id="lightbox-next"
       aria-label="Foto berikutnya"
-      class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none"
+      class="fixed right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-[var(--color-kertas)]/90 backdrop-blur-sm text-[var(--color-tinta)] border-2 border-[var(--color-tinta)] font-['Archivo'] font-black text-xl leading-none z-[100] cursor-pointer"
     >›</button>
   </div>
 </dialog>
