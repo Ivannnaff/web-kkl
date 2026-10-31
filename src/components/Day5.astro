@@ -47,23 +47,6 @@ const { data } = Astro.props;
           {data.description}
         </p>
 
-        <!-- Foto kecil -->
-        <div class="mt-12 grid grid-cols-3 gap-4 max-w-2xl">
-          {data.photos.map((p) => (
-            <figure>
-              <img
-                src={p.src}
-                alt={p.alt}
-                loading="lazy"
-                class="reveal-tirai w-full aspect-square object-cover border border-[var(--color-kertas)]/25 opacity-90"
-              />
-              <figcaption class="mt-2 font-['DM_Mono'] text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-kertas)]/45">
-                {p.caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-
         <blockquote class="mt-10 max-w-2xl border-l-4 border-[var(--color-marka)] pl-5">
           <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug text-[var(--color-kertas)] -rotate-1">“{data.quote}”</p>
         </blockquote>

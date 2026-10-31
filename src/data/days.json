@@ -79,16 +79,21 @@
     "id": "hari-4",
     "day": 4,
     "date": "21 Agustus 2026",
-    "title": "Eksplorasi Bebas & Pusat Oleh-Oleh Krisna",
-    "location": "Gianyar & Denpasar",
+    "title": "Eksplorasi Bebas & Perjalanan Pulang",
+    "location": "Denpasar & Gilimanuk",
     "category": "Exploration",
-    "description": "Hari paling santai dan seru! Tim 9 bebas mengeksplorasi sudut-sudut Pulau Bali, berburu buah tangan autentik di Krisna Oleh-Oleh, mencicipi kuliner khas, serta merajut gelak tawa dalam kebersamaan persahabatan.",
+    "description": "Hari paling santai dan seru! Tim 9 bebas mengeksplorasi sudut-sudut Pulau Bali, berburu buah tangan autentik, mencicipi kuliner khas, dan memulai perjalanan pulang menuju penyeberangan Gilimanuk.",
     "quote": "Waktu terbaik untuk melepas penat, menikmati sudut otentik Bali, dan mempererat kebersamaan.",
     "photos": [
       {
         "src": "/img/galeri/krisna.webp",
-        "alt": "Pusat oleh-oleh Krisna Bali",
-        "caption": "Berburu buah tangan di Krisna Oleh-Oleh"
+        "alt": "Pusat oleh-oleh Bali",
+        "caption": "Berburu buah tangan dan oleh-oleh"
+      },
+      {
+        "src": "/img/galeri/kapal.webp",
+        "alt": "Penyeberangan feri Gilimanuk menuju Ketapang",
+        "caption": "Perjalanan Pulang via Feri Gilimanuk"
       }
     ]
   },
@@ -101,22 +106,6 @@
     "category": "Return",
     "description": "Perjalanan darat panjang kembali ke Semarang melintasi selat Bali dan jalan tol trans-Jawa. Di dalam bus, obrolan hangat, evaluasi perjalanan, dan lantunan musik menutup rangkaian KKL dengan penuh rasa syukur.",
     "quote": "Roda bus berputar membawa kami pulang, namun kenangan dan ilmu di Bali tetap tinggal.",
-    "photos": [
-      {
-        "src": "/img/day5/01.webp",
-        "alt": "Feri penyeberangan KMP Gilimanuk melintasi Selat Bali",
-        "caption": "Penyeberangan Gilimanuk - Ketapang"
-      },
-      {
-        "src": "/img/day5/02.webp",
-        "alt": "Jalan tol Mandara di Badung, Bali",
-        "caption": "Menembus jalan tol menuju Semarang"
-      },
-      {
-        "src": "/img/day5/03.webp",
-        "alt": "Bus perjalanan di jalan pada malam hari",
-        "caption": "Perjalanan malam menuju Semarang"
-      }
-    ]
+    "photos": []
   }
 ]
