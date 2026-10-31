@@ -79,26 +79,16 @@
     "id": "hari-4",
     "day": 4,
     "date": "21 Agustus 2026",
-    "title": "Eksplorasi Bebas & Kuliner Bali Journey",
+    "title": "Eksplorasi Bebas & Pusat Oleh-Oleh Krisna",
     "location": "Gianyar & Denpasar",
     "category": "Exploration",
-    "description": "Hari paling santai dan seru! Tim 9 bebas mengeksplorasi sudut-sudut Pulau Bali, berburu buah tangan autentik, mencicipi kuliner khas seperti Ayam Betutu dan Lawar, serta merajut gelak tawa dalam kebersamaan persahabatan.",
+    "description": "Hari paling santai dan seru! Tim 9 bebas mengeksplorasi sudut-sudut Pulau Bali, berburu buah tangan autentik di Krisna Oleh-Oleh, mencicipi kuliner khas, serta merajut gelak tawa dalam kebersamaan persahabatan.",
     "quote": "Waktu terbaik untuk melepas penat, menikmati sudut otentik Bali, dan mempererat kebersamaan.",
     "photos": [
       {
-        "src": "/img/galeri/galeri4.webp",
-        "alt": "Pantai Pandawa",
-        "caption": "Pantai Pandawa"
-      },
-      {
-        "src": "/img/galeri/galeri19.webp",
-        "alt": "Tebing Pandawa",
-        "caption": "Tebing Pandawa"
-      },
-      {
-        "src": "/img/galeri/galeri17.webp",
-        "alt": "Sudut Alam Bali",
-        "caption": "Sudut Alam Bali"
+        "src": "/img/galeri/krisna.webp",
+        "alt": "Pusat oleh-oleh Krisna Bali",
+        "caption": "Berburu buah tangan di Krisna Oleh-Oleh"
       }
     ]
   },

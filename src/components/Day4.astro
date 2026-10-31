@@ -36,7 +36,7 @@ const { data } = Astro.props;
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
               {data.photos.map((p, i) => (
-                <figure class={`relative ${i === 0 ? "rotate-[-1deg]" : i === 1 ? "rotate-[1deg]" : "rotate-[-2deg]"}`}>
+                <figure class={`relative max-w-sm ${i === 0 ? "rotate-[-1deg]" : i === 1 ? "rotate-[1deg]" : "rotate-[-2deg]"}`}>
                   <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-[var(--color-marka)]/70 -rotate-3 z-10"></div>
                   <img
                     src={p.src}
