@@ -6,8 +6,8 @@
     "title": "Kunjungan Industri PT. Victoria Care Indonesia",
     "location": "Semarang",
     "category": "Industrial",
-    "description": "Hari pertama perjalanan dimulai dengan kunjungan edukatif ke fasilitas produksi modern PT. Victoria Care Indonesia di Semarang. Kami mengamati langsung penerapan sistem otomasi lini produksi, manajemen logistik, dan kontrol kualitas berbasis data yang sangat relevan dengan disiplin ilmu Informatika.",
-    "quote": "Standar operasional berstandar internasional yang menginspirasi mahasiswa Informatika dalam memahami sistem enterprise.",
+    "description": "Kunjungan industri ke PT. Victoria Care Indonesia di Semarang untuk melihat langsung proses produksi modern, sistem otomasi, dan manajemen logistik.",
+    "quote": "Standar operasional modern yang memberikan wawasan nyata tentang penerapan sistem enterprise.",
     "photos": [
       {
         "src": "/img/day1/01.webp",
@@ -47,10 +47,10 @@
     "id": "hari-3",
     "day": 3,
     "date": "20 Agustus 2026",
-    "title": "Balai Diklat Industri Bali, Pantai Kuta, Tari Kecak & Makrab",
-    "location": "Denpasar & Kuta",
+    "title": "Balai Diklat Industri Bali, Pantai Kuta, Pantai Pandawa & Tari Kecak",
+    "location": "Denpasar, Kuta & Badung",
     "category": "Education & Show",
-    "description": "Kunjungan pagi ke Balai Diklat Industri Bali memberikan wawasan mendalam tentang inkubasi talenta digital. Sore harinya menikmati panorama matahari terbenam di Pantai Kuta, ditutup dengan magisnya pementasan Tari Kecak dan acara malam keakraban (makrab).",
+    "description": "Kunjungan pagi ke Balai Diklat Industri Bali. Siang harinya berkunjung ke Pantai Kuta, dilanjutkan perjalanan ke Pantai Pandawa pada sore hari, serta ditutup dengan pementasan Tari Kecak dan malam keakraban.",
     "quote": "Kombinasi antara pengembangan skill digital masa depan, pelestarian tradisi leluhur, dan kehangatan malam keakraban.",
     "photos": [
       {
