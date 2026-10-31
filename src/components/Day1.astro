@@ -9,7 +9,7 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section id={data.id} class="relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
+<section id={data.id} class="day-section relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
   <div class="mx-auto max-w-[1400px] px-5 lg:pl-[108px] lg:pr-12">
     <div class="grid lg:grid-cols-[280px_1fr] gap-12">
       <!-- Rambu sticky -->
@@ -52,9 +52,9 @@ const { data } = Astro.props;
                    src={p.src}
                    alt={p.alt}
                    loading="lazy"
-                   class="reveal-tirai w-full sm:w-[280px] aspect-[4/3] object-cover border-4 border-[var(--color-kertas)] shadow-[4px_4px_0_var(--color-tinta)]"
+                   class="reveal-tirai w-full sm:w-[360px] aspect-[4/3] object-cover border-4 border-[var(--color-kertas)] shadow-[4px_4px_0_var(--color-tinta)]"
                  />
-                <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)] max-w-[240px]">
+                <figcaption class="mt-2 font-['DM_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-tinta-soft)] max-w-[360px]">
                   {p.caption}
                 </figcaption>
               </figure>

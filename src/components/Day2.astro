@@ -10,7 +10,7 @@ const { data } = Astro.props;
 const [pagi, malam] = data.photos;
 ---
 
-<section id={data.id} class="relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
+<section id={data.id} class="day-section relative py-24 sm:py-28 bg-[var(--color-kertas)] scroll-mt-4">
   <div class="mx-auto max-w-[1400px] px-5 lg:pl-[108px] lg:pr-12">
     <div class="grid lg:grid-cols-[280px_1fr] gap-12">
       <div class="sticky-rambu lg:sticky lg:top-28 lg:self-start">
@@ -28,40 +28,44 @@ const [pagi, malam] = data.photos;
           {data.title}
         </h3>
 
-        <!-- Dua babak vertikal: PAGI terang / MALAM gelap -->
-        <div class="mt-10 grid md:grid-cols-2 gap-0 border-2 border-[var(--color-tinta)]">
-          <!-- Babak pagi -->
-          <div class="p-6 sm:p-8 bg-[var(--color-kertas)]">
-            <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">PAGI</p>
-            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
-              Ulun Danu Beratan · Kabut & air tenang
-            </p>
-            <img
-              src={pagi.src}
-              alt={pagi.alt}
-              loading="lazy"
-              class="reveal-tirai mt-6 w-full aspect-[16/9] object-cover border-2 border-[var(--color-tinta)]"
-            />
-            <p class="mt-4 text-[0.98rem] leading-relaxed">{data.description.split(".")[0]}.</p>
-          </div>
+         <!-- Dua babak vertikal: PAGI terang / MALAM gelap -->
+         <div class="mt-10 grid md:grid-cols-2 gap-0 border-2 border-[var(--color-tinta)]">
+           <!-- Babak pagi -->
+           <div class="p-6 sm:p-8 bg-[var(--color-kertas)] flex flex-col justify-between">
+             <div>
+               <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">PAGI</p>
+               <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-tinta-soft)]">
+                 Ulun Danu Beratan · Kabut & air tenang
+               </p>
+               <img
+                 src={pagi.src}
+                 alt={pagi.alt}
+                 loading="lazy"
+                 class="reveal-tirai mt-6 w-full aspect-[4/3] object-cover border-2 border-[var(--color-tinta)]"
+               />
+             </div>
+             <p class="mt-6 text-[0.98rem] leading-relaxed">{pagi.caption}</p>
+           </div>
 
-          <!-- Babak malam -->
-          <div class="p-6 sm:p-8 bg-[var(--color-aspal)] text-[var(--color-kertas)] relative overflow-hidden">
-            <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">MALAM</p>
-            <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-kertas)]/60">
-              Devdan Show · Nusa Dua Theatre
-            </p>
-            <img
-              src={malam.src}
-              alt={malam.alt}
-              loading="lazy"
-              class="reveal-tirai mt-6 w-[115%] max-w-none aspect-[3/4] object-cover border-2 border-[var(--color-kertas)]/30 -translate-x-2 sm:-translate-x-6"
-            />
-            <p class="mt-6 text-[0.98rem] leading-relaxed text-[var(--color-kertas)]/90">
-              {data.description.split(".").slice(1).join(".").trim()}
-            </p>
-          </div>
-        </div>
+           <!-- Babak malam -->
+           <div class="p-6 sm:p-8 bg-[var(--color-aspal)] text-[var(--color-kertas)] flex flex-col justify-between relative overflow-hidden">
+             <div>
+               <p class="font-['Archivo'] font-black text-5xl sm:text-7xl tracking-tighter leading-none">MALAM</p>
+               <p class="mt-2 font-['DM_Mono'] text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-kertas)]/60">
+                 Devdan Show · Nusa Dua Theatre
+               </p>
+               <img
+                 src={malam.src}
+                 alt={malam.alt}
+                 loading="lazy"
+                 class="reveal-tirai mt-6 w-full aspect-[4/3] object-cover border-2 border-[var(--color-kertas)]/30"
+               />
+             </div>
+             <p class="mt-6 text-[0.98rem] leading-relaxed text-[var(--color-kertas)]/90">
+               {malam.caption}
+             </p>
+           </div>
+         </div>
 
         <blockquote class="mt-10 border-l-4 border-[var(--color-marka)] pl-5">
           <p class="font-['Caveat'] text-2xl sm:text-3xl leading-snug -rotate-1">“{data.quote}”</p>
