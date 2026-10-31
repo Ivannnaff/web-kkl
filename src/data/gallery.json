@@ -12,6 +12,12 @@
     "category": "Budaya"
   },
   {
+    "src": "/img/galeri/devdan.webp",
+    "alt": "Pertunjukan Devdan Show di Bali Nusa Dua Theatre",
+    "caption": "Devdan Show · Nusa Dua Theatre",
+    "category": "Budaya"
+  },
+  {
     "src": "/img/galeri/galeri3.webp",
     "alt": "Gedung Balai Diklat Industri Bali",
     "caption": "Balai Diklat Industri Bali",
@@ -127,14 +133,8 @@
   },
   {
     "src": "/img/galeri/makrab.webp",
-    "alt": "Suasana malam kebersamaan dan makrab",
-    "caption": "Malam Kebersamaan (Makrab)",
+    "alt": "Suasana malam keakraban (makrab) Tim 9",
+    "caption": "Malam Keakraban (Makrab)",
     "category": "Lainnya"
-  },
-  {
-    "src": "/img/galeri/devdan.webp",
-    "alt": "Pertunjukan Devdan Show di Bali Nusa Dua Theatre",
-    "caption": "Devdan Show · Nusa Dua Theatre",
-    "category": "Budaya"
   }
 ]
